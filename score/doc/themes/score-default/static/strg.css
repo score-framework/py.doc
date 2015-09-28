@@ -1,0 +1,406 @@
+span.confkey {
+    font-weight: bold;
+}
+
+span.faint {
+    color: #AAA;
+}
+
+/* FONTS */
+    @font-face {
+        font-family: roboto;
+        src: url('roboto-regular/roboto-regular-webfont.eot');
+        src: url('roboto-regular/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+             url('roboto-regular/roboto-regular-webfont.woff2') format('woff2'),
+             url('roboto-regular/roboto-regular-webfont.woff') format('woff'),
+             url('roboto-regular/roboto-regular-webfont.ttf') format('truetype'),
+             url('roboto-regular/roboto-regular-webfont.svg#roboto') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: roboto-bold;
+        src: url('roboto-bold/roboto-bold-webfont.eot');
+        src: url('roboto-bold/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
+             url('roboto-bold/roboto-bold-webfont.woff2') format('woff2'),
+             url('roboto-bold/roboto-bold-webfont.woff') format('woff'),
+             url('roboto-bold/roboto-bold-webfont.ttf') format('truetype'),
+             url('roboto-bold/roboto-bold-webfont.svg#robotobold') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: roboto-italic;
+        src: url('roboto-italic/roboto-italic-webfont.eot');
+        src: url('roboto-italic/roboto-italic-webfont.eot?#iefix') format('embedded-opentype'),
+             url('roboto-italic/roboto-italic-webfont.woff2') format('woff2'),
+             url('roboto-italic/roboto-italic-webfont.woff') format('woff'),
+             url('roboto-italic/roboto-italic-webfont.ttf') format('truetype'),
+             url('roboto-italic/roboto-italic-webfont.svg#robotoitalic') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /*
+    @font-face {
+        font-family: menlo;
+        src: url('menlo/menlo-webfont.eot');
+        src: url('menlo/menlo-webfont.eot?#iefix') format('embedded-opentype'),
+             url('menlo/menlo-webfont.woff2') format('woff2'),
+             url('menlo/menlo-webfont.woff') format('woff'),
+             url('menlo/menlo-webfont.ttf') format('truetype'),
+             url('menlo/menlo-webfont.svg#menlo') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    */
+
+    @font-face {
+        font-family: menlo;
+        src: url('m/menlo-regular-webfont.eot');
+        src: url('m/menlo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+             url('m/menlo-regular-webfont.woff2') format('woff2'),
+             url('m/menlo-regular-webfont.woff') format('woff'),
+             url('m/menlo-regular-webfont.ttf') format('truetype'),
+             url('m/menlo-regular-webfont.svg#menlo') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+/* /FONTS */
+/* CUSTOM PAGE STYLES */
+    /* DOC & BODY */
+        body {
+            font-family: roboto !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+        }
+
+        div.body {
+            overflow: hidden !important;
+        }
+
+        div.document {
+            background: #f6f6f6 !important;
+        }
+
+        .body-wrapper,
+        div.body {
+            border: none !important;
+        }
+
+        a, a .pre {
+            color: #075eb6 !important;
+        }
+
+        pre {
+            border: 1px solid #ddd !important;
+            border-left: 4px solid #ddd !important;
+            font-family: menlo;
+            font-size: 14px !important;
+        }
+
+        div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h6, strong {
+            font-family: roboto-bold !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+        }
+
+        div.body p {
+            font-family: roboto !important;
+            color: #000;
+        }
+
+        div.document {
+            border-right: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+        }
+
+        div.bodywrapper {
+            margin: 0 0 0 360px !important;
+            border-left: 1px solid #ddd;
+        }
+
+        table.highlighttable {
+            margin-left: 0 !important;
+        }
+    /* /DOC & BODY */
+    /* HEADER */
+        .score-header {
+            background: #22242b;
+            border-right: 1px solid #22242b;
+            height: 120px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .score-header #searchbox h3,
+        .score-header #searchbox .searchtip {
+            display: none;
+        }
+
+        .score-header #searchbox form,
+        .bodywrapper form {
+            float: right;
+            width: 300px;
+            margin-top: 36px;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .bodywrapper form {
+            float: none;
+        }
+
+        .bodywrapper form input[type="text"] {
+            background: #f2f2f2;
+        }
+
+        .score-header #searchbox form input[type="text"],
+        .bodywrapper form input[type="text"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: none;
+            outline: none;
+            width: 280px;
+            padding: 0 10px;
+            height: 42px;
+            color: #999;
+            font-size: 19px;
+        }
+
+        .score-header #searchbox form input[type="submit"],
+        .bodywrapper form input[type="submit"]  {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-image: url('search.png');
+            background-image: url('search.svg'), none;
+            background-position: 0 9px;
+            width: 40px;
+            height: 42px;
+            background-color: transparent;
+            text-indent: -9999px;
+            border: none;
+            cursor: pointer;
+            background-repeat: no-repeat;
+        }
+
+        .score-header .logo {
+            width: 300px;
+            max-width: 300px;
+            float: left;
+            margin: 12px 0 0 17px;
+        }
+
+        .score-header .logo.fallback-logo {
+            display: none;
+        }
+
+        .highlight-link {
+            position: absolute;
+            right: 20px;
+            top: -2px;
+        }
+    
+        .highlight-link a {
+            color: #fff !important;
+            font-size: 13px;
+        }
+    /* /HEADER */
+    /* SIDEBAR */
+        div.sphinxsidebarwrapper {
+            padding-left: 55px !important;
+            width: 295px;
+        }
+
+        div.sphinxsidebar ul {
+            font-family: roboto !important;
+            font-size: 14px !important;
+        }
+
+        div.sphinxsidebar ul li {
+            margin: 8px 0;
+        }
+
+        div.sphinxsidebar h3, div.sphinxsidebar h4 {
+            font-family: roboto-bold !important;
+            margin: 16px 20px 0 0 !important;
+            padding-left: 0 !important;
+            border-bottom: 1px solid #dddddd !important;
+        }
+
+        div.sphinxsidebar h3 {
+            margin-left: 20px !important;
+        }
+
+        div.sphinxsidebar h3 a {
+            font-size: 18px;
+            line-height: 25px;
+            color: #222222 !important;
+        }
+
+        div.sphinxsidebar ul ul, div.sphinxsidebar ul.want-points {
+            list-style-type: disc;
+            color: #999999;
+        }
+
+        div.sphinxsidebar ul .reference.internal {
+            color: #075eb6;
+        }
+    /* /SIDEBAR */
+    /* FOOTER */
+        div.footer {
+            height: 90px;
+            background: #fff !important;
+            border: 1px solid #dddddd;
+            padding: 0 !important;
+            overflow: hidden;
+            width: auto !important;
+        }
+
+        .footer-logo, .footer-logo a {
+            float: left;
+        }
+
+        .footer-logo img.logo {
+            margin-top: 20px;
+            margin-left: 30px;
+            width: 200px;
+        }
+
+        .footer-logo .fallback-logo {
+            display: none;
+        }
+
+        .footer-claim {
+            float: left;
+            font-size: 14px;
+            color: #22242b;
+            line-height: 111px;
+            margin-left: 15px;
+            font-family: roboto-bold !important;
+            margin-top: 0;
+        }
+
+        .footer-info {
+            float: right;
+            line-height: 111px;
+            font-size: 14px;
+            margin-right: 20px;
+            color: #5c6272;
+        }
+
+        .footer-info a {
+            color: #5c6272 !important;
+        }
+    /* /FOOTER */
+    /* NOTES */
+    div.note {
+        background-image: url('info.png') !important;
+        background-image: url('info.svg'), none !important;
+        background-repeat: no-repeat !important;
+        background-color: #d6ebfc !important;
+        background-position: 10px 8px !important;
+    }
+
+    div.note pre {
+        border: 1px solid #5eb2fb !important;
+        border-left: 4px solid #5eb2fb !important;
+    }
+
+    div.admonition-todo {
+        background-image: url('note.png') !important;
+        background-image: url('note.svg'), none !important;
+        background-repeat: no-repeat !important;
+        background-color: #feeaac !important;
+        background-position: 10px 8px !important;
+    }
+
+    div.admonition-todo pre {
+        border: 1px solid #e7cc78 !important;
+        border-left: 4px solid #e7cc78 !important;
+    }
+
+    td.linenos pre {
+        border: none !important;
+    }
+
+    .pre {
+        font-family: menlo !important;
+        font-size: 12px;
+    }
+    /* /NOTES */
+
+    /* NAVIGABLE TOC TREE */
+    .toctree-l2,
+    .toctree-l3,
+    .toctree-l4,
+    .toctree-l5,
+    .toctree-l6,
+    .toctree-l7 {
+        display: none;
+    }
+
+    .toctree-l1.current .toctree-l2,
+    .toctree-l1.open .toctree-l2 {
+        display: list-item;
+    }
+
+    .toctree-l2.current .toctree-l3,
+    .toctree-l2.open .toctree-l3 {
+        display: list-item;
+    }
+
+    .toctree-l3.current .toctree-l4,
+    .toctree-l3.open .toctree-l4 {
+        display: list-item;
+    }
+
+    .toctree-l4.current .toctree-l5,
+    .toctree-l4.open .toctree-l5 {
+        display: list-item;
+    }
+
+    .toctree-l5.current .toctree-l6,
+    .toctree-l5.open .toctree-l6 {
+        display: list-item;
+    }
+
+    .toctree-l6.current .toctree-l7,
+    .toctree-l6.open .toctree-l7 {
+        display: list-item;
+    }
+
+    div.sphinxsidebar ul li {
+        list-style-image: url('list.png');
+        position: relative;
+    }
+
+    div.sphinxsidebar ul li.has-children {
+        list-style-type: none !important;
+        list-style-image: url('open-b.png');
+    }
+
+    div.sphinxsidebar ul li.has-children.open {
+        list-style-type: none !important;
+        list-style-image: url('close-b.png');
+    }
+
+    div.sphinxsidebar ul li.has-children.open li.has-children {
+        list-style-image: url('open-b.png');
+    }
+
+    div.sphinxsidebar ul li.has-children.open li.has-children.open {
+        list-style-image: url('close-b.png');
+    }
+
+    div.sphinxsidebar ul li.has-children.current-dynamic.open a.current.reference.internal,
+    div.sphinxsidebar ul li.has-children.current.open a.current-dynamic.reference.internal {
+        font-family: roboto-bold;
+    }
+    /* /NAVIGABLE TOC TREE */
+
+/* /CUSTOM PAGE STYLES */

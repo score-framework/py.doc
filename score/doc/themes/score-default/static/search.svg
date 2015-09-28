@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY st0 "display:none;">
+	<!ENTITY st1 "display:inline;fill:#2A78AD;">
+	<!ENTITY st2 "display:inline;">
+	<!ENTITY st3 "fill-rule:evenodd;clip-rule:evenodd;fill:#DAAC1F;">
+	<!ENTITY st4 "fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;">
+	<!ENTITY st5 "fill-rule:evenodd;clip-rule:evenodd;fill:#5EB2FB;">
+	<!ENTITY st6 "fill:#1D2029;">
+]>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28.2px"
+	 height="28.2px" viewBox="0 0 28.2 28.2" style="enable-background:new 0 0 28.2 28.2;" xml:space="preserve">
+<g id="Layer_2" style="&st0;">
+	<rect style="&st1;" width="1000" height="1000"/>
+</g>
+<g id="helper" style="&st0;">
+</g>
+<g id="Ebene_3" style="&st0;">
+	<g style="&st2;">
+		<path style="&st3;" d="M14,0c7.7,0,14,6.3,14,14s-6.3,14-14,14C6.3,28,0,21.7,0,14S6.3,0,14,0z"/>
+		<path style="&st4;" d="M8,9h12v2H8V9z"/>
+		<path style="&st4;" d="M8,13h12v2H8V13z"/>
+		<path style="&st4;" d="M8,17h12v2H8V17z"/>
+	</g>
+</g>
+<g id="Ebene_4" style="&st0;">
+	<g style="&st2;">
+		<path style="&st5;" d="M14,0c7.7,0,14,6.3,14,14s-6.3,14-14,14C6.3,28,0,21.7,0,14S6.3,0,14,0z"/>
+		<path style="&st4;" d="M12,18v2l5,0l0-2h-1v-7h-4v2h1v5H12z"/>
+		<path style="&st4;" d="M14.5,6C15.3,6,16,6.7,16,7.5S15.3,9,14.5,9S13,8.3,13,7.5S13.7,6,14.5,6z"/>
+	</g>
+</g>
+<g id="Ebene_5">
+	<g>
+		<path style="&st6;" d="M24,22.4l-6.2-6.2c1.4-1.7,2.2-3.9,2.2-6.2c0-5.5-4.5-10-10-10C4.5,0,0,4.5,0,10c0,5.5,4.5,10,10,10
+			c2.4,0,4.5-0.8,6.2-2.2l6.2,6.2L24,22.4z M10,17.8c-4.3,0-7.8-3.5-7.8-7.8c0-4.3,3.5-7.8,7.8-7.8c4.3,0,7.8,3.5,7.8,7.8
+			C17.8,14.3,14.3,17.8,10,17.8z"/>
+	</g>
+</g>
+</svg>

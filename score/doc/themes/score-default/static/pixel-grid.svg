@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY st0 "display:none;">
+	<!ENTITY st1 "display:inline;fill:#2A78AD;">
+	<!ENTITY st2 "fill-rule:evenodd;clip-rule:evenodd;fill:#DAAC1F;">
+	<!ENTITY st3 "fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;">
+	<!ENTITY st4 "fill-rule:evenodd;clip-rule:evenodd;fill:#5EB2FB;">
+	<!ENTITY st5 "fill:#1D2029;">
+]>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px"
+	 height="100px" viewBox="0 0 300 100" style="enable-background:new 0 0 300 100;" xml:space="preserve">
+<g id="Layer_2" style="&st0;">
+	<rect style="&st1;" width="1000" height="1000"/>
+</g>
+<g id="helper" style="&st0;">
+</g>
+<g id="Ebene_3">
+	<g>
+		<path style="&st2;" d="M14,0c7.7,0,14,6.3,14,14s-6.3,14-14,14C6.3,28,0,21.7,0,14S6.3,0,14,0z"/>
+		<path style="&st3;" d="M8,9h12v2H8V9z"/>
+		<path style="&st3;" d="M8,13h12v2H8V13z"/>
+		<path style="&st3;" d="M8,17h12v2H8V17z"/>
+	</g>
+</g>
+<g id="Ebene_4">
+	<g>
+		<path style="&st4;" d="M114.2,0c7.7,0,14,6.3,14,14s-6.3,14-14,14c-7.7,0-14-6.3-14-14S106.4,0,114.2,0z"/>
+		<path style="&st3;" d="M112.2,18v2l5,0l0-2h-1v-7h-4v2h1v5H112.2z"/>
+		<path style="&st3;" d="M114.7,6c0.8,0,1.5,0.7,1.5,1.5S115.5,9,114.7,9s-1.5-0.7-1.5-1.5S113.8,6,114.7,6z"/>
+	</g>
+</g>
+<g id="Ebene_5">
+	<g>
+		<path style="&st5;" d="M224,22.4l-6.2-6.2c1.4-1.7,2.2-3.9,2.2-6.2c0-5.5-4.5-10-10-10c-5.5,0-10,4.5-10,10c0,5.5,4.5,10,10,10
+			c2.4,0,4.5-0.8,6.2-2.2l6.2,6.2L224,22.4z M210,17.8c-4.3,0-7.8-3.5-7.8-7.8c0-4.3,3.5-7.8,7.8-7.8c4.3,0,7.8,3.5,7.8,7.8
+			C217.8,14.3,214.3,17.8,210,17.8z"/>
+	</g>
+</g>
+</svg>

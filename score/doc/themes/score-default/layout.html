@@ -1,0 +1,133 @@
+{%- extends "basic/layout.html" %}
+
+{%- block extrahead %}
+    <!--[if IE 8]>
+        <style type="text/css">
+            .footer-logo .fallback-logo,
+            .score-header .logo.fallback-logo {
+                display: block;
+            }
+            .footer-logo .svg-logo,
+            .score-header .logo.svg-logo {
+                display: none;
+            }
+        </style>
+    <![endif]-->
+{% endblock %}
+
+{%- block sidebartoc %}
+    {{ toctree(maxdepth=-1, collapse=False) }}
+    <script type="text/javascript">
+        (function() {
+            var $nav = $('.sphinxsidebar ul').eq(0);
+            $nav.find('li').each(function(i, li) {
+                var $li = $(li);
+                if ($li.find('ul').length > 0) {
+                    $li.addClass('has-children');
+                }
+                if ($li.hasClass('current')) {
+                    $li.removeClass('current');
+                    $li.addClass('current-dynamic');
+                    $li.addClass('open');
+                }
+            });
+            $nav.find('li').on('mousedown', function(event) {
+                if (event.target.nodeName != 'A') {
+                    $(this).toggleClass('open');
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        })();
+    </script>
+{%- endblock %}
+
+{%- block relbar1 %}
+    <div class="score-header">
+        <p class="logo">
+            <a href="{{ pathto(master_doc) }}">
+                <img class="logo svg-logo" src="{{ pathto('_static/score-logo-inverted.svg', 1) }}" alt="SCORE Logo"/>
+                <img class="logo fallback-logo" src="{{ pathto('_static/score-logo-inverted.png', 1) }}" alt="SCORE Logo"/>
+            </a>
+        </p>
+        {# %- include "searchbox.html" % #}
+        {#
+            basic/searchbox.html
+            ~~~~~~~~~~~~~~~~~~~~
+
+            Sphinx sidebar template: quick search box.
+
+            :copyright: Copyright 2007-2015 by the Sphinx team, see AUTHORS.
+            :license: BSD, see LICENSE for details.
+        #}
+        {%- if pagename != "search" and builder != "singlehtml" %}
+            <div id="searchbox" style="display: none" role="search" class="test">
+                <h3>{{ _('Quick search') }}</h3>
+                <form class="search" action="{{ pathto('search') }}" method="get">
+                    <input placeholder="Search" type="text" name="q" />
+                    <input type="submit" value="{{ _('Go') }}" />
+                    <input type="hidden" name="check_keywords" value="yes" />
+                    <input type="hidden" name="area" value="default" />
+                </form>
+                <p class="searchtip" style="font-size: 90%">
+                    {{ _('Enter search terms or a module, class or function name.') }}
+                </p>
+            </div>
+            <script type="text/javascript">$('#searchbox').show(0);</script>
+        {%- endif %}
+    </div>
+{% endblock %}
+
+{%- block sidebarlogo %}
+    {# empty block #}
+{%- endblock %}
+
+{%- block sidebarrel %}
+    {# empty block #}
+{%- endblock %}
+{%- block sidebarsourcelink %}
+    {# empty block #}
+{%- endblock %}
+{%- if customsidebar %}
+    {# empty block #}
+{%- endif %}
+{%- block sidebarsearch %}
+    {# empty block #}
+{%- endblock %}
+
+{%- block header %}
+    <div class="body-wrapper">
+{% endblock %}
+
+{%- block relbar2 %}
+    {# empty block #}
+{% endblock %}
+{%- block footer %}
+        <div class="footer" role="contentinfo">
+            <div class="footer-logo">
+                <a href="{{ pathto(master_doc) }}">
+                    <img class="logo svg-logo" src="{{ pathto('_static/score-logo.svg', 1) }}" alt="SCORE Logo"/>
+                    <img class="logo fallback-logo" src="{{ pathto('_static/score-logo.png', 1) }}" alt="SCORE Logo"/>
+                </a>
+                <p class="footer-claim">
+                    Modular Framework for Serious Projects
+                </p>
+            </div>
+            <div class="footer-info">
+                {%- if show_copyright %}
+                    {%- if hasdoc('copyright') %}
+                        {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+                    {%- else %}
+                        {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}
+                    {%- endif %}
+                {%- endif %}
+                {%- if last_updated %}
+                    {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+                {%- endif %}
+                {%- if show_sphinx %}
+                    {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+                {%- endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
