@@ -9,6 +9,5 @@ Javascript Libraries
     js/menu/README
     js/oop/README
     js/router/README
-    js/slides/README
     js/tpl/README
 

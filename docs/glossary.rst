@@ -11,11 +11,6 @@ score.auth
 
 .. include:: python/auth/glossary_include.rst
 
-score.changes
-=============
-
-.. include:: python/changes/glossary_include.rst
-
 score.ctx
 =========
 
