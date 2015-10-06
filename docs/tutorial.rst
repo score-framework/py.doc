@@ -105,21 +105,6 @@ Setup
 Let's first create our environment as described in the :ref:`installation
 documentation <score_install>`:
 
-.. todo::
-
-    Since we do not have an open source license yet, we could not publish
-    the framework on pypi_. Please use the following shell code instead of
-    ``pip install score.pyramid``::
-
-        for i in init db webassets tpl html css js svg cli pyramid; do
-            hg clone https://hg.strg.at/score/py/$i /tmp/$i
-            cd /tmp/$i
-            python setup.py develop
-            cd -
-        done
-
-    .. _pypi: http://pypi.python.org
-
 .. code-block:: console
 
   sirlancelot@spamalot:~$ mkvirtualenv --python=$(which python3) moswblog
@@ -485,12 +470,6 @@ Luckily we can add some test data quite quickly. Open
 ``moswblog/scripts/db.py`` and add the following lines to the ``_gendummy``
 function:
 
-.. todo::
-
-    Our documentation currently lies behind HTTP basic authentication. Please
-    download the file http://docs.strg.at/_downloads/moswblog.yaml manually and
-    replace the URL in the code below with the path to the downloaded file.
-
 .. code-block:: python
 
     # ...
@@ -498,7 +477,7 @@ function:
     # ...
 
     def _gendummy(session):
-        objects = load_data('http://docs.strg.at/_downloads/moswblog.yaml')
+        objects = load_data('http://score-framework.org/doc/_downloads/moswblog.yaml')
         for cls in objects:
             for id in objects[cls]:
                 session.add(objects[cls][id])
