@@ -33,7 +33,7 @@ with open(os.path.join(here, 'README.rst')) as f:
 
 setup(
     name='score.doc',
-    version='0.1',
+    version='0.1.1',
     description='Helpers for documenting The SCORE Framework',
     long_description=README,
     author='strg.at',
@@ -41,6 +41,7 @@ setup(
     url='http://score-framework.org',
     keywords='score framework documentation',
     packages=['score.doc'],
+    namespace_packages=['score'],
     license='LGPL',
     classifiers=[
         'Development Status :: 4 - Beta',
