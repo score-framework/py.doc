@@ -1,62 +1,53 @@
-.. _score_install:
+.. _installation:
 
 ************
 Installation
 ************
 
-.. _score_install_quickstart:
+Installation Summary
+====================
 
-Quickstart
-==========
+- :ref:`Make sure you have python 3 installed <installation_python3>`
 
-- :ref:`Install python 3 <score_install_python>`
+- :ref:`Open a new command shell <installation_open_shell>`
 
-- :ref:`Install a C compiler <score_install_c_compiler>` (for libsass integration)
+- :ref:`Install score's projects management tool into your home folder
+  <installation_projects>`:
+ 
+  .. code-block:: console
 
-- :ref:`Install virtualenvwrapper <score_install_virtualenvwrapper>`
-  
-- :ref:`Create a virtual environment <score_create_virtualenv>`::
+    sirlancelot@spamalot:~$ pip3 install --user score.projects
+    Collecting score.projects
+      ...
+    Successfully installed click networkx score.cli score.init score.projects vex
 
-    mkvirtualenv --python="$(which python3)" <projectname>
+- :ref:`Close the old shell and open a new one to ensure you can call score
+  <installation_call_score>`:
 
-- :ref:`Install our pyramid helpers <score_install_pyramid_helpers>`::
+  .. code-block:: console
 
-    pip install score.pyramid
+    sirlancelot@spamalot:~$ score
+    Usage: score [OPTIONS] COMMAND [ARGS]...
+    
+    Options:
+      -c, --conf PATH  The configuration to use.
+      --help           Show this message and exit.
+    
+    Commands:
+      conf      Manages configurations.
+      projects  Create or load your projects
 
-  .. todo::
+- Head over to the :ref:`tutorial`, if you want to learn how to use score.
 
-      Since we do not have an open source license yet, we could not publish
-      the framework on pypi_. Please use the following shell code instead of
-      ``pip install score.pyramid``::
 
-          for i in init kvcache ctx session auth db webassets tpl html css js svg cli pyramid; do
-              hg clone https://hg.strg.at/score/py/$i /tmp/$i
-              cd /tmp/$i
-              python setup.py develop
-              cd -
-          done
 
-      .. _pypi: http://pypi.python.org
+Detailed description
+====================
 
-- :ref:`Create the project skeleton <score_install_skeleton>`::
-
-    pcreate -t score <projectname>
-
-- Install the newly created package::
-
-    cd <projectname>
-    python setup.py develop
-
-- You are ready to :ref:`run your application <score_install_run>`::
-
-    pserve --reload development.ini
-
-- Head over to the :ref:`blog tutorial <blog_tutorial>`, if you are new to score.
-
-.. _score_install_python:
+.. _installation_python3:
 
 Install Python 3
-================
+----------------
 
 There are currently two maintained branches of Python:
 
@@ -75,182 +66,110 @@ python3`_.
 
 .. _download and install python3: https://www.python.org/downloads/
 
-.. _score_install_c_compiler:
+.. _installation_open_shell:
 
-Installing a C compiler
-=======================
+Opening a new command shell
+---------------------------
 
-The Python module providing :ref:`SASS <score_sass>` support is written in C,
-so we need a working C compiler (like gcc_ or clang_).
+A `command shell`_ allows the most basic form of interaction on a computer
+system: by writing commands as text. It may feel awkward if you haven't used a
+shell before, but has the benefit of working more or less the same way across
+different systems.
 
-- On *MacOS X*, everything should already be in place. But if you experience
-  problems installing ``libsass``, you will have to download and install
-  XCode_.
+Since the authors of the framework work on unixoid operating systems
+(including GNU/Linux and Mac OS), our tutorials all use a common format
+of its `command line prompt`_::
 
-- On *Debian* or *Ubuntu*, you can issue the following command to install all
-  required packets::
+  sirlancelot@spamalot:~/score$ dosomething
+  ╰────┬────╯│╰──┬───╯│╰──┬──╯│ ╰────┬────╯
+       │     │   │    │   │   │      │
+       │     │   │    │   │   │      └─> The command to execute
+       │     │   │    │   │   │
+       │     │   │    │   │   └─> Prompt/Input separator
+       │     │   │    │   │
+       │     │   │    │   └─> Current folder, ~ means HOME folder
+       │     │   │    │
+       │     │   │    └─> Login/Folder separator
+       │     │   │
+       │     │   └─> Name of the host
+       │     │
+       │     └─> User/Host separator
+       │
+       └─> Name of the current user
 
-      sudo apt-get install build-essential python3-dev
+.. _command shell: https://en.wikipedia.org/wiki/Command-line_interface
+.. _command line prompt: https://en.wikipedia.org/wiki/Command-line_interface#Command_prompt
 
-.. _XCode: https://developer.apple.com/xcode/downloads/
-.. _gcc: http://en.wikipedia.org/wiki/GNU_Compiler_Collection
-.. _clang: http://en.wikipedia.org/wiki/Clang
+.. note::
+    On *Mac OS X*, the application that will give you a shell is terminal_. You
+    can just start the application and start pasting the commands into the new
+    shell window.
 
-.. _score_install_virtualenvwrapper:
+    .. _terminal: http://en.wikipedia.org/wiki/Terminal_%28OS_X%29
 
-Installing virtualenvwrapper
-============================
+.. _installation_projects:
 
-When working on python projects, it is always a good idea to create a new
-virtual python environment. If this concept is new to you, please consult the
-:ref:`python documentation on virtual environments <python:venv-def>`.
+Installing ``score.projects``
+-----------------------------
 
-Although python provides its own :mod:`virtual envirenment package
-<venv>` starting from version 3.3, its implementation is quite simple. One
-notable shortcoming for our use cases is the lack of a package installer in
-the created virtual environments. So one needs to manually install one within
-the environment.
+pip_ is a python package for installing other python packages. It is capable of
+installing packages in your user folder, if you pass it the ``--user`` flag. We
+will use it to install the score module, that we will be using to manage
+different projects:
 
-There is another popular python package that provides more features:
-virtualenv_. This project is quite old and very stable, and if you already
-know it, you can just use it.
+  .. code-block:: console
 
-But if you are new in python land, we would rather recommend using
-virtualenvwrapper_. It allows more convenient management of multiple virtual
-environments and provides hooks for various events — like the activation of a
-virtual environment. It is a bit "quirky" to install, though.
+    sirlancelot@spamalot:~$ pip3 install --user score.projects
+    Collecting score.projects
+      ...
+    Successfully installed click networkx score.cli score.init score.projects vex
 
-Ubuntu / Debian
----------------
+.. _pip: https://pypi.python.org/pypi/pip
 
-.. code-block:: console
+.. _installation_call_score:
 
-  $ aptitude install python3-pip
-  $ pip3 install virtualenvwrapper
-  $ cat >> .bashrc <<EOF
-  export WORKON_HOME=$HOME/.virtualenvs
-  export PROJECT_HOME=$HOME/projects
-  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-  source /usr/local/bin/virtualenvwrapper.sh
-  EOF
+Calling score
+-------------
 
-Mac OS X
---------
+.. note::
+    Since we are mostly operating on UNIX-based systems, we currently have no
+    way of thoroughly testing an installation on *Windows*. You will have to
+    add the `path to the score executable`_ to your `PATH` manually.
 
-.. code-block:: console
+    .. _path to the score executable: https://docs.python.org/3/install/index.html#alternate-installation-the-user-scheme
+    .. _PATH: http://www.computerhope.com/issues/ch000549.htm
 
-  $ pip3 install virtualenvwrapper
-  $ cat >> .bash_profile <<EOF
-  export WORKON_HOME=$HOME/.virtualenvs
-  export PROJECT_HOME=$HOME/Projects
-  export VIRTUALENVWRAPPER_PYTHON="$(which python3)"
-  source /Library/Frameworks/Python.framework/Versions/3.?/bin/virtualenvwrapper.sh
-  EOF
+One of the packages, that was installed in the previous step, is
+:mod:`score.cli`. This module allows you to control your applications from the
+command line.
 
-.. _virtualenv: https://pypi.python.org/pypi/virtualenv
-.. _virtualenvwrapper: https://pypi.python.org/pypi/virtualenvwrapper
-.. _official python package index: https://pypi.python.org
+During the installation of that package, we already tried to configure your
+system to provide a new shell command to you: ``score``. We tried to update
+your ~/.bashrc to add the folder, where the score executable was installed, to
+your ``$PATH``.
 
-.. _score_create_virtualenv:
+But since there is no guaranteed way of achieving this, you will have to check
+if it worked. Just open a new shell (this is important, as the changes do not
+take effect in your old shell) and see if you can access score. If everything
+worked, it should look like the following:
 
-Creating a virtual environment
-==============================
+  .. code-block:: console
 
-Creating a virtual environment is as easy as invoking a single script::
+    sirlancelot@spamalot:~$ score
+    Usage: score [OPTIONS] COMMAND [ARGS]...
+    
+    Options:
+      -c, --conf PATH  The configuration to use.
+      --help           Show this message and exit.
+    
+    Commands:
+      conf      Manages configurations.
+      projects  Create or load your projects
 
-  mkvirtualenv --python="$(which python3)" <projectname>
+If you get a "command not found" error instead, you will have to update your
+``$PATH`` to include the `folder where score was installed`_. The author of the
+lovely `vex` python package has assembled a great explanation on this topic:
 
-The created virtual environment will have configured pip_ and easy_install_,
-as described above. Note that virtualenvwrapper_ immediately activates newly
-created virtual environments, as indicated by the name of the virtual
-environment at the start of your prompt.
+https://github.com/sashahart/vex#first-time-setup-for-python-beginners
 
-If you want close your current shell and want to continue working on the
-project you have just created at a later point, you will need to *activate* its
-virtual environment. This is done by calling ``workon``::
-
-  workon <projectname>
-
-It is possible to further configure the environment by adding more features to
-the hooks. One popular feature is the automatic switch to the project folder
-upon activation. If you want, you can just append the command to the
-post-activation file (:file:`~/.virtualenvs/<venv-name>/bin/postactivate`, if
-you followed the virtualenvwrapper_ installation above)::
-
-  cd ~/path/to/project/folder
-
-You will now change to that folder automatically whenever you ``workon`` this
-virtual environment.
-
-.. _pip: http://pip.readthedocs.org/en/latest
-.. _easy_install: http://pythonhosted.org//setuptools/easy_install.html
-
-.. _score_install_pyramid_helpers:
-
-Installing our pyramid helpers
-==============================
-
-Pyramid's preferred way of creating new projects is through the usage of
-so-called :term:`scaffolds <pyramid:scaffold>`. It's narrative documentation
-describes the process of :ref:`creating a new pyramid application
-<pyramid:project_narr>` in detail.
-
-We provide a python package containing several scaffolds for applications
-using our framework. The package can be installed conveniently using pip_ or
-easy_install_::
-
-  pip install score.pyramid
-  # the same using easy_install:
-  easy_install score.pyramid
-
-.. todo::
-
-    Since we do not have an open source license yet, we could not publish
-    the framework on pypi_. Please use the following shell code instead of
-    ``pip install score.pyramid``::
-
-        for i in init kvcache ctx session auth db webassets tpl html css js svg cli pyramid; do
-            hg clone https://hg.strg.at/score/py/$i /tmp/$i
-            cd /tmp/$i
-            python setup.py develop
-            cd -
-        done
-
-    .. _pypi: http://pypi.python.org
-
-.. _score_install_skeleton:
-
-Creating a project skeleton
-===========================
-
-As described in detail in pyramid's own documentation on :ref:`creating new
-projects <pyramid:creating_a_project>`, the only required call is the
-following::
-
-  pcreate -t <scaffold-name> <project-name>
-
-Our :mod:`score.pyramid` package currently provides two scaffolds:
-
-- ``score`` - The default scaffold installing templating features and database
-  connectivity.
-- ``score-nodb`` - An alternative scaffold providing templating only.
-
-.. _score_install_run:
-
-Running your application
-========================
-
-:ref:`Starting a pyramid application <running_the_project_application>` is as
-easy as calling ``pserve`` with the path to a configuration file::
-
-  pserve development.ini
-
-Adding the optional argument ``--reload`` will cause the application to
-restart whenever a file changes::
-
-  pserve --reload development.ini
-
-Your application is then available under the URL ``http://localhost:6543/``
-and you can start your development process.
-
-
+.. _folder where score was installed: https://docs.python.org/3/install/index.html#alternate-installation-the-user-scheme

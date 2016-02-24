@@ -1,4 +1,4 @@
-.. _blog_tutorial:
+.. _tutorial:
 
 *************
 Blog Tutorial
@@ -8,7 +8,7 @@ Introduction
 ============
 
 Aim of this tutorial is to provide a gentle introduction to various aspects of
-the score framework. We will create a small but complete blogging portal with
+The SCORE Framework. We will create a small but complete blogging portal with
 a proper database layer, sane CSS and modular javascript. Our main priorities
 will be a correct and — even more importantly — a maintainable implementation.
 
@@ -27,6 +27,7 @@ There are four types of Users to the system:
 
 - **Administrators**, which have unrestricted access to all resources and
   features. They are the only ones that can create new Blogs and Bloggers.
+
 - **Internal Bloggers**, that are allowed to:
 
   - write and publish articles on their own blogs only and
@@ -34,7 +35,8 @@ There are four types of Users to the system:
 
 - **External Bloggers**, who can write blog entries, but are not allowed to
   publish them.
-- **Frontend Users** that can write comments to published blogs.
+
+- **Frontend Users**, that can write comments to published blogs.
 
 All **Backend Users** (Administrators, Internal Bloggers and External
 Bloggers) can further do anything a Frontend User can.
@@ -64,83 +66,42 @@ Articles:
 - tag page (lists articles with given tag)
 - article page
 
-.. _blog_tutorial_setup:
+.. _tutorial_setup:
 
 Setup
 =====
 
-.. note::
-    Since the authors of the framework work on unixoid operating systems
-    (including GNU/Linux and Mac OS), our tutorials all use a common format
-    of its `command line prompt`_::
-
-      (moswblog)sirlancelot@spamalot:~/projects/blog$ dosomething
-      ╰────┬───╯╰────┬────╯│╰──┬───╯│╰──────┬──────╯│ ╰────┬────╯
-           │         │     │   │    │       │       │      │
-           │         │     │   │    │       │       │      └─> The command to execute
-           │         │     │   │    │       │       │
-           │         │     │   │    │       │       └─> Prompt/Input separator
-           │         │     │   │    │       │
-           │         │     │   │    │       └─> Current folder, ~ means HOME folder
-           │         │     │   │    │
-           │         │     │   │    └─> Login/Folder separator
-           │         │     │   │
-           │         │     │   └─> Name of the host
-           │         │     │
-           │         │     └─> User/Host separator
-           │         │
-           │         └─> Name of the current user
-           │
-           └─> Name of the current virtual environment (if there is one)
-
-    .. _command line prompt: https://en.wikipedia.org/wiki/Command-line_interface#Command_prompt
-
-.. note::
-    On *Mac OS X*, the application that will give you a shell is terminal_. You
-    can just start the application and start pasting the commands into the new
-    shell window.
-
-    .. _terminal: http://en.wikipedia.org/wiki/Terminal_%28OS_X%29
-
-Let's first create our environment as described in the :ref:`installation
-documentation <score_install>`:
+Make sure you have a working score.projects installation (as described in the
+:ref:`installation` document). You can then use it to create our project called
+moswblog:
 
 .. code-block:: console
 
-  sirlancelot@spamalot:~$ mkvirtualenv --python=$(which python3) moswblog
+  sirlancelot@spamalot:~$ score projects create moswblog
     ...
-  (moswblog)sirlancelot@spamalot:~$ pip install score.pyramid
-    ...
-  (moswblog)sirlancelot@spamalot:~$ pcreate -t score moswblog
-    ...
-  (moswblog)sirlancelot@spamalot:~$ cd moswblog
-  (moswblog)sirlancelot@spamalot:~/moswblog$ python setup.py develop
-    ...
-  (moswblog)sirlancelot@spamalot:~/moswblog$ pserve --reload development.ini
-    ...
+  (moswblog) sirlancelot@spamalot:~/moswblog$ score serve
 
 We can now open our browser and make sure that everything in the *general* and
-*development* sections are working: http://localhost:6543.
+*development* sections are working: http://localhost:8080.
 
 You will need to leave this console open and continue working through a new
 one. So open a new console and issue the following commands:
 
 .. code-block:: console
 
-    sirlancelot@spamalot:~$ cd moswblog
-    sirlancelot@spamalot:~/moswblog$ workon moswblog
-    (moswblog)sirlancelot@spamalot:~/moswblog$ 
+    sirlancelot@spamalot:~/moswblog$ score projects load moswblog
+    (moswblog) sirlancelot@spamalot:~/moswblog$ 
 
 .. note::
 
     If at any time, during the tutorial, your browser complains that the web
     server is not responding, you might need to come back to your initial
-    console to check if the ``pserve`` command is still running. If it is not,
-    you can just restart it with the same command:
+    console to check if the ``score serve`` command is still running. If it is
+    not, you can just restart it with the same command:
 
     .. code-block:: console
 
-        (moswblog)sirlancelot@spamalot:~/moswblog$ pserve --reload development.ini
+        (moswblog) sirlancelot@spamalot:~/moswblog$ score serve
           ...
 
 We will also need to install some additional packages for this tutorial. Let's
@@ -148,7 +109,7 @@ get that out of our way:
 
 .. code-block:: console
 
-  (moswblog)sirlancelot@spamalot:~/moswblog$ pip install sqlalchemy_utils passlib docutils PyYAML
+  (moswblog) sirlancelot@spamalot:~/moswblog$ pip install sqlalchemy_utils passlib docutils PyYAML
     ...
 
 .. note::
@@ -188,10 +149,10 @@ Database Basics
     the same name, which is a *python package folder*.
 
     We are assuming that you have changed into your *project folder* (i.e.
-    ~/moswblog) and provide the file names relative to this directory. This
+    $HOME/moswblog) and provide the file names relative to this directory. This
     means that the absolute path of the file ``moswblog/db/user.py`` is
-    actually ``~/moswblog/moswblog/db/user.py``, since it resides in the python
-    package we have created for our project (using ``pcreate``, above).
+    actually ``$HOME/moswblog/moswblog/db/user.py``, since it resides in the
+    python package we have created for our project (using ``pcreate``, above).
 
 User
 ----
@@ -296,26 +257,12 @@ sqlalchemy. One interesting bit is the ``backref`` argument: it adds a new
 member with that name to the referenced class. We will later use that member
 to access an Internal Bloggers blogs.
 
-Including the Classes
----------------------
-
-Now that we have created some new classes, we need to include them in our
-database package. Let's open up the file ``moswblog/db/__init__.py`` and add the
-new classes:
-
-.. code-block:: python
-    :linenos:
-
-    from .base import *
-    from .user import *
-    from .content import *
-
 Initializing the Database
 -------------------------
 
 The default configuration will write to a sqlite_ file, which is a database
-engine which can store its entire database in a single file. You can change
-the database in the configuration file ``development.ini``.
+engine that can store an entire database in a single file. You can change
+the database in the configuration file ``development.conf``.
 
 Now that we have defined all our classes, we need to create the database
 tables, views, foreign keys, triggers, etc. We will use the command-line
@@ -323,7 +270,7 @@ application ``score`` for this purpose:
 
 .. code-block:: console
 
-    (moswblog)sirlancelot@spamalot:~/moswblog$ score db reset development.ini
+    (moswblog) sirlancelot@spamalot:~/moswblog$ score db reset
       ...
 
 This should generate a lot of output, while all required database entities are
@@ -331,7 +278,7 @@ created. You can connect to the database and inspect it, if you want:
 
 .. code-block:: console
 
-    (moswblog)sirlancelot@spamalot:~/moswblog$ sqlite3 database.sqlite3
+    (moswblog) sirlancelot@spamalot:~/moswblog$ sqlite3 database.sqlite3
 
 .. code-block:: sqlite3
 
@@ -371,44 +318,43 @@ The Entrypoint
 --------------
 
 We had defined four frontend views in our specification, so we will start by
-replacing the configuration-tests with some more interesting features one by
+replacing the default start page with some more interesting features one by
 one. Let's first create the home page entry point in
-``moswblog/page/start.py``:
+``moswblog/page/home.py``:
 
 .. code-block:: python
     :linenos:
 
     import moswblog.db as db
-    from pyramid.renderers import render
-    from pyramid.view import view_config
+    from .router import router
 
-    @view_config(route_name='start', renderer='start.jinja2')
-    def start(request):
-        articles = request.db.query(db.Article).\
-                filter(db.Article.published == True).\
-                order_by(db.Article.datetime.desc()).\
-                limit(10)
+    @router.route('home', '/', tpl='home.jinja2')
+    def home(ctx):
+        articles = ctx.db.query(db.Article).\
+            filter(db.Article.published).\
+            order_by(db.Article.datetime.desc()).\
+            limit(10)
         return {'articles': articles}
 
 Whoa, there is a lot going on in these few lines. Let's go over them step by
 step:
 
-- Lines ``#5`` and ``#6``: We define a so-called :term:`view <pyramid:view>`
-  as a function. We are giving it the name "start" in line #5 and the function
-  we define below will accept a :term:`request <pyramid:request>` object.
+- Lines ``#4`` and ``#5``: We define a so-called :term:`page` as a function. We
+  are giving it the name "home" in line #4 and the function we define below
+  will accept a :term:`context object`.
 
-- Also in line ``#5``, we instruct :ref:`pyramid's rendering system
-  <pyramid:renderers_chapter>` to render a template called ``start.jinja2``
-  at the end of this function with the parameters returned by the function. The
-  result of the rendering process — i.e. the rendered template, a string
-  containing HTML in this case — is return as the response body to the client.
+- Also in line ``#4``, we instruct :mod:`our http module <score.http>` to
+  render a template called ``home.jinja2`` at the end of this function with the
+  parameters returned by the function. The result of the rendering process—
+  i.e. the rendered template, a string containing HTML in this case—is returned
+  as the response body to the client.
 
-- Lines ``#7`` through ``#10``: We are using the database
-  :term:`session <sqlalchemy:session>` that was automatically added to the
-  request by our :mod:`db <score.db>` module to retrieve a list of the newest
-  published Articles.
+- Lines ``#6`` through ``#9``: We are using the :term:`database session
+  <sqlalchemy:session>` that was automatically added to the request by our
+  :mod:`db <score.db>` module to retrieve a list of the newest published
+  Articles.
 
-- Line ``#11``: The dictionary returned by this function contains the
+- Line ``#10``: The dictionary returned by this function contains the
   parameters to the template we defined earlier, in line ``#5``.
 
 
@@ -467,7 +413,7 @@ Creating Dummy Data
 ===================
 
 Luckily we can add some test data quite quickly. Open
-``moswblog/scripts/db.py`` and add the following lines to the ``_gendummy``
+``moswblog/scripts/db.py`` and add the following lines to the ``reset``
 function:
 
 .. code-block:: python
@@ -476,17 +422,17 @@ function:
     from score.db import load_data
     # ...
 
-    def _gendummy(session):
-        objects = load_data('http://score-framework.org/doc/_downloads/moswblog.yaml')
-        for cls in objects:
-            for id in objects[cls]:
-                session.add(objects[cls][id])
+        # XXX: create project-specific mandatory objects here
+        objects = {}
+        if gendummy:
+            objects = load_data('http://score-framework.org/doc/_downloads/moswblog.yaml')
+        # ...
 
 We can now add some test data through the command line interface:
 
 .. code-block:: console
 
-    (moswblog)sirlancelot@spamalot:~/moswblog$ score db gendummy development.ini
+    (moswblog) sirlancelot@spamalot:~/moswblog$ score db reset -d development.conf
 
 Let's see how our page looks with the data: http://localhost:6543 ... Alright!
 Time to move to the next steps.
@@ -593,8 +539,8 @@ filter function after score initialization:
 
     def init(file):
         ...
-        config, scoreconf = scoreinit(file)
-        scoreconf['score.tpl'].renderer.add_filter('html', 'rst', rst2html, escape_output=False)
+        config, score = init_score(file)
+        score.tpl.renderer.add_filter('html', 'rst', rst2html, escape_output=False)
         ...
 
 We have just created a filter function called *rst* which is available in
@@ -896,7 +842,7 @@ our database to create the table for this class:
 
 .. code-block:: console
 
-    (moswblog)sirlancelot@spamalot:~/moswblog$ score db update development.ini
+    (moswblog) sirlancelot@spamalot:~/moswblog$ score db update development.conf
 
 Let's continue to the template for articles, ``moswblog/tpl/article.jinja2``
 and add these lines at the end of the content block:
@@ -927,6 +873,16 @@ login.
 
 Authentication & Authorization
 ==============================
+
+.. note::
+
+    This whole section is outdated, authentication and authorization have
+    become a lot easier to configure, but this tutorial was not yet updated to
+    make use of this new SCORE module.
+
+.. todo::
+    
+    Update this section
 
 Since only logged in users are allowed to post comments, we will need a
 login process. For the sake of simplicity, we will omit the registration form

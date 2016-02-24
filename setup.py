@@ -40,7 +40,7 @@ setup(
     author_email='score@strg.at',
     url='http://score-framework.org',
     keywords='score framework documentation',
-    packages=['score.doc'],
+    packages=['score', 'score.doc'],
     namespace_packages=['score'],
     license='LGPL',
     classifiers=[
