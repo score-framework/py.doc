@@ -21,14 +21,14 @@ module provides a function called ``init``:
 
 - The other parameters to this function are your module's dependencies, i.e.
   names of other modules that your module relies on. A module for
-  transporting coconuts (using the *swallow* module) might look like the
-  following:
+  transporting coconuts (depending on the *swallow* module, optionally making
+  use of an existing *knights* module) might look like the following:
 
   .. code-block:: python
 
     from score.init import parse_time_interval
 
-    def init(confdict, swallow):
+    def init(confdict, swallow, knights=None):
         max_coconut_weight = int(confdict.get('max_weight', 10))
         assert swalllow.max_payload_weight >= max_coconut_weight
         timeout = parse_time_interval(confdict.get('assume_dead', '1d'))

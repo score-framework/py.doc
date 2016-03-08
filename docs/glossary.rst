@@ -21,6 +21,11 @@ score.es
 
 .. include:: python/es/glossary_include.rst
 
+score.http
+==========
+
+.. include:: python/http/glossary_include.rst
+
 score.init
 ==========
 

@@ -14,6 +14,7 @@ Python Libraries
     python/es/index_include
     python/geoip/index_include
     python/html/index_include
+    python/http/index_include
     python/init/index_include
     python/js/index_include
     python/jsapi/index_include
