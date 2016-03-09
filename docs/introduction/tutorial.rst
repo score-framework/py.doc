@@ -1,4 +1,4 @@
-.. _tutorial:
+.. _introduction_tutorial:
 
 *************
 Blog Tutorial
@@ -8,9 +8,9 @@ Introduction
 ============
 
 Aim of this tutorial is to provide a gentle introduction to various aspects of
-The SCORE Framework. We will create a small but complete blogging portal with
+the score framework. We will create a small but complete blogging portal with
 a proper database layer, sane CSS and modular javascript. Our main priorities
-will be a correct and—even more importantly—a maintainable implementation.
+will be a correct and — even more importantly — a maintainable implementation.
 
 The Project
 ===========
@@ -23,14 +23,10 @@ comment on individual postings.
 Specification
 =============
 
-Users
------
-
 There are four types of Users to the system:
 
 - **Administrators**, which have unrestricted access to all resources and
   features. They are the only ones that can create new Blogs and Bloggers.
-
 - **Internal Bloggers**, that are allowed to:
 
   - write and publish articles on their own blogs only and
@@ -38,14 +34,10 @@ There are four types of Users to the system:
 
 - **External Bloggers**, who can write blog entries, but are not allowed to
   publish them.
-
-- **Frontend Users**, that can write comments to published blogs.
+- **Frontend Users** that can write comments to published blogs.
 
 All **Backend Users** (Administrators, Internal Bloggers and External
 Bloggers) can further do anything a Frontend User can.
-
-Content
--------
 
 A **Blog** is a sub-portal that is managed by a single Internal Blogger. Apart
 from a unique name, it is actually just a container for Articles.
@@ -63,10 +55,7 @@ content-related attributes:
 The body text and the teaser text are to be written in reStructuredText, the
 favorite markup language of The Ministry of Silly Walks (who knew!?)
 
-Frontend
---------
-
-The home page consists of just five views, four of which are a listing of
+The **frontend** consists of just five views, four of which are a listing of
 Articles:
 
 - start page (lists newest articles)
@@ -75,49 +64,95 @@ Articles:
 - tag page (lists articles with given tag)
 - article page
 
-
-.. _tutorial_setup:
-
 Setup
 =====
 
-Make sure you have a working :mod:`score.projects` installation (as described
-in the :ref:`installation` document). You can then use it to create our project
-called moswblog:
+.. note::
+    Since the authors of the framework work on unixoid operating systems
+    (including GNU/Linux and Mac OS), our tutorials all use a common format
+    of its `command line prompt`_::
+
+      (moswblog)sirlancelot@spamalot:~/projects/blog$ dosomething
+      ╰────┬───╯╰────┬────╯│╰──┬───╯│╰──────┬──────╯│ ╰────┬────╯
+           │         │     │   │    │       │       │      │
+           │         │     │   │    │       │       │      └─> The command to execute
+           │         │     │   │    │       │       │
+           │         │     │   │    │       │       └─> Prompt/Input separator
+           │         │     │   │    │       │
+           │         │     │   │    │       └─> Current folder, ~ means HOME folder
+           │         │     │   │    │
+           │         │     │   │    └─> Login/Folder separator
+           │         │     │   │
+           │         │     │   └─> Name of the host
+           │         │     │
+           │         │     └─> User/Host separator
+           │         │
+           │         └─> Name of the current user
+           │
+           └─> Name of the current virtual environment (if there is one)
+
+    .. _command line prompt: https://en.wikipedia.org/wiki/Command-line_interface#Command_prompt
+
+.. note::
+    On *Mac OS X*, the application that will give you a shell is terminal_. You
+    can just start the application and start pasting the commands into the new
+    shell window.
+
+    .. _terminal: http://en.wikipedia.org/wiki/Terminal_%28OS_X%29
+
+Let's first create our environment as described in the :ref:`installation
+documentation <score_install>`:
 
 .. code-block:: console
 
-  sirlancelot@spamalot:~$ score projects create moswblog
+  sirlancelot@spamalot:~$ score project create moswblog
     ...
-  (moswblog) sirlancelot@spamalot:~/moswblog$ score serve
+  (moswblog)sirlancelot@spamalot:~$ score http serve
+    ...
 
-We can now open our browser and feast our eyes on the overwhelming reception to
-our incredible, albeit currently empty project by visiting
-http://localhost:8080.
+We can now open our browser and make sure that everything in the *general* and
+*development* sections are working: http://localhost:6543.
 
 You will need to leave this console open and continue working through a new
 one. So open a new console and issue the following commands:
 
 .. code-block:: console
 
-    sirlancelot@spamalot:~/moswblog$ score projects load moswblog
-    (moswblog) sirlancelot@spamalot:~/moswblog$ 
+    sirlancelot@spamalot:~$ cd moswblog
+    sirlancelot@spamalot:~/moswblog$ workon moswblog
+    (moswblog)sirlancelot@spamalot:~/moswblog$ 
 
 .. note::
 
     If at any time, during the tutorial, your browser complains that the web
     server is not responding, you might need to come back to your initial
-    console to check if the ``score serve`` command is still running. If it is
-    not, you can just restart it with the same command:
+    console to check if the ``pserve`` command is still running. If it is not,
+    you can just restart it with the same command:
 
     .. code-block:: console
 
-        (moswblog) sirlancelot@spamalot:~/moswblog$ score serve
+        (moswblog)sirlancelot@spamalot:~/moswblog$ pserve --reload development.ini
           ...
 
 We will also need to install some additional packages for this tutorial. Let's
-get that out of our way first by editing the file ``setup.py`` and adding them
-to the list of dependencies at the end of the file:
+get that out of our way:
+
+.. code-block:: console
+
+  (moswblog)sirlancelot@spamalot:~/moswblog$ pip install sqlalchemy_utils passlib docutils PyYAML
+    ...
+
+.. note::
+
+    It is possible that the installation of PyYAML outputs an error during
+    installation. In most cases, this is just a failed attempt to compile the
+    optional C module. If the ``pip`` command itself does not terminate with an
+    error, the installation should be fine.
+
+We should also update the installation file of our module, otherwise we will
+have trouble deploying our application onto the live server farm cloud thingie.
+Edit ``setup.py`` and add the freshly installed packages to the list of
+``install_requires``:
 
 .. code-block:: python
 
@@ -132,21 +167,6 @@ to the list of dependencies at the end of the file:
         ],
         # ...
 
-After updating our blog's dependency list, we should re-install it to obtain
-the new modules:
-
-.. code-block:: console
-
-  (moswblog) sirlancelot@spamalot:~/moswblog$ pip install --editable .
-    ...
-
-.. note::
-
-    It is possible that the installation of PyYAML outputs an error during
-    installation. In most cases, this is just a failed attempt to compile the
-    optional C module. If the ``pip`` command itself does not terminate with
-    an error, the installation should be fine.
-
 Database Basics
 ===============
 
@@ -159,10 +179,10 @@ Database Basics
     the same name, which is a *python package folder*.
 
     We are assuming that you have changed into your *project folder* (i.e.
-    $HOME/moswblog) and provide the file names relative to this directory. This
+    ~/moswblog) and provide the file names relative to this directory. This
     means that the absolute path of the file ``moswblog/db/user.py`` is
-    actually ``$HOME/moswblog/moswblog/db/user.py``, since it resides in the
-    python package we have created for our project (using ``pcreate``, above).
+    actually ``~/moswblog/moswblog/db/user.py``, since it resides in the python
+    package we have created for our project (using ``pcreate``, above).
 
 User
 ----
@@ -172,20 +192,39 @@ files. Let's start with the users in ``moswblog/db/user.py``:
 
 .. code-block:: python
     :linenos:
-    :emphasize-lines: 1,5
+    :emphasize-lines: 1,8
 
-    from .storable import Storable
-    from sqlalchemy import Column, String
+    from .base import Storable
+    from sqlalchemy import (
+        Column,
+        String,
+    )
     from sqlalchemy_utils.types.password import PasswordType
 
     class User(Storable):
         username = Column(String, nullable=False)
         password = Column(PasswordType(schemes=['pbkdf2_sha512']))
+        name = Column(String, nullable=False)
+
+    class Administrator(User):
+        pass
+
+    class Blogger(User):
+        pass
+
+    class InternalBlogger(Blogger):
+        pass
+
+    class ExternalBlogger(Blogger):
+        pass
+
+    class FrontendUser(User):
+        pass
 
 We can import our readily-configured Storable :ref:`base class <db_base>`
 (line #1) and use it to create a class tree for the users of our system. As
 the name suggests, the Base class needs to be the parent class of all classes
-that should be persisted into the database (line #5).
+that should be persisted into the database (line #8).
 
 Content
 -------
@@ -197,7 +236,7 @@ The next file is the one containing the blogs and articles called
     :linenos:
     :emphasize-lines: 15,16
 
-    from .storable import Storable
+    from .base import Storable
     from score.db import IdType
     from sqlalchemy import (
         Column,
@@ -211,15 +250,14 @@ The next file is the one containing the blogs and articles called
 
     class Blog(Storable):
         name = Column(String, nullable=False)
-        owner_id = Column(IdType, ForeignKey('_user.id'), nullable=False)
-        owner = relationship('User')
-
+        owner_id = Column(IdType, ForeignKey('_internal_blogger.id'), nullable=False)
+        owner = relationship('InternalBlogger', backref='blogs')
 
     class Article(Storable):
-        author_id = Column(IdType, ForeignKey('_user.id'), nullable=False)
-        author = relationship('User')
+        author_id = Column(IdType, ForeignKey('_blogger.id'), nullable=False)
+        author = relationship('Blogger', backref='articles')
         blog_id = Column(IdType, ForeignKey('_blog.id'), nullable=False)
-        blog = relationship('Blog')
+        blog = relationship('Blog', backref='articles')
         title = Column(String(200), nullable=False)
         url = Column(String(200), nullable=False)
         teaser = Column(String, nullable=False)
@@ -227,10 +265,9 @@ The next file is the one containing the blogs and articles called
         datetime = Column(DateTime, nullable=False)
         published = Column(Boolean, nullable=False)
 
-
     class ArticleTag(Storable):
         article_id = Column(IdType, ForeignKey('_article.id'), nullable=False)
-        article = relationship(Article)
+        article = relationship(Article, backref='tags')
         name = Column(String(30))
 
 This time, we are using a nice feature of sqlalchemy: relationships. Every
@@ -246,15 +283,30 @@ name of a table is always determined as described in the documentation of
 The ``owner`` member is what adds the magic: It will automatically provide the
 correct InternalBlogger object with the id found in the ``owner_id``. This is
 a simple :ref:`relationship <sqlalchemy:relationship_patterns>` as defined by
-sqlalchemy.
+sqlalchemy. One interesting bit is the ``backref`` argument: it adds a new
+member with that name to the referenced class. We will later use that member
+to access an Internal Bloggers blogs.
 
+Including the Classes
+---------------------
+
+Now that we have created some new classes, we need to include them in our
+database package. Let's open up the file ``moswblog/db/__init__.py`` and add the
+new classes:
+
+.. code-block:: python
+    :linenos:
+
+    from .base import *
+    from .user import *
+    from .content import *
 
 Initializing the Database
 -------------------------
 
-The development configuration will write to a sqlite_ file, which is a database
-engine that can store an entire database in a single file. You can change
-the database in the configuration file ``development.conf``.
+The default configuration will write to a sqlite_ file, which is a database
+engine which can store its entire database in a single file. You can change
+the database in the configuration file ``development.ini``.
 
 Now that we have defined all our classes, we need to create the database
 tables, views, foreign keys, triggers, etc. We will use the command-line
@@ -262,7 +314,7 @@ application ``score`` for this purpose:
 
 .. code-block:: console
 
-    (moswblog) sirlancelot@spamalot:~/moswblog$ score db reset
+    (moswblog)sirlancelot@spamalot:~/moswblog$ score db reset development.ini
       ...
 
 This should generate a lot of output, while all required database entities are
@@ -270,33 +322,28 @@ created. You can connect to the database and inspect it, if you want:
 
 .. code-block:: console
 
-    (moswblog) sirlancelot@spamalot:~/moswblog$ sqlite3 database.sqlite3
+    (moswblog)sirlancelot@spamalot:~/moswblog$ sqlite3 database.sqlite3
 
 .. code-block:: sqlite3
 
-
-    SQLite version 3.9.2 2015-11-02 18:31:45
+    SQLite version 3.8.7.4 2014-12-09 01:34:36
     Enter ".help" for usage hints.
     sqlite> .tables
-    _actor        _article_tag  _user         article       blog        
-    _article      _blog         actor         article_tag   user        
-    sqlite> .schema _article
-    CREATE TABLE _article (
-        author_id INTEGER NOT NULL, 
-        blog_id INTEGER NOT NULL, 
-        title VARCHAR(200) NOT NULL, 
-        url VARCHAR(200) NOT NULL, 
-        teaser VARCHAR NOT NULL, 
-        body VARCHAR NOT NULL, 
-        datetime DATETIME NOT NULL, 
-        published BOOLEAN NOT NULL, 
-        _type VARCHAR(100) NOT NULL, 
+    _administrator     _external_blogger  article            frontend_user    
+    _article           _frontend_user     article_tag        internal_blogger 
+    _article_tag       _internal_blogger  blog               user             
+    _blog              _user              blogger          
+    _blogger           administrator      external_blogger 
+    sqlite> .schema _blogger
+    CREATE TABLE _blogger (
         id INTEGER NOT NULL, 
         PRIMARY KEY (id), 
-        FOREIGN KEY(author_id) REFERENCES _user (id), 
-        FOREIGN KEY(blog_id) REFERENCES _blog (id), 
-        CHECK (published IN (0, 1))
+        FOREIGN KEY(id) REFERENCES _user (id)
     );
+    CREATE TRIGGER autodel_blogger AFTER DELETE ON _blogger
+    FOR EACH ROW BEGIN
+      DELETE FROM _user WHERE id = OLD.id;
+    END;
     sqlite> .quit
 
 We have a table, as well as a view_ for each class we created earlier. You can
@@ -315,19 +362,19 @@ The Entrypoint
 --------------
 
 We had defined four frontend views in our specification, so we will start by
-replacing the default start page with some more interesting features one by
+replacing the configuration-tests with some more interesting features one by
 one. Let's first create the home page entry point in
-``moswblog/page/home.py``:
+``moswblog/page/start.py``:
 
 .. code-block:: python
     :linenos:
 
     import moswblog.db as db
-    from .router import router
+    from pyramid.view import view_config
 
-    @router.route('home', '/', tpl='home.jinja2')
-    def home(ctx):
-        articles = ctx.db.query(db.Article).\
+    @view_config(route_name='start', renderer='start.jinja2')
+    def start(request):
+        articles = request.db.query(db.Article).\
             filter(db.Article.published).\
             order_by(db.Article.datetime.desc()).\
             limit(10)
@@ -336,20 +383,20 @@ one. Let's first create the home page entry point in
 Whoa, there is a lot going on in these few lines. Let's go over them step by
 step:
 
-- Lines ``#4`` and ``#5``: We define a so-called :term:`page` as a function. We
-  are giving it the name "home" in line #4 and the function we define below
-  will accept a :term:`context object`.
+- Lines ``#4`` and ``#5``: We define a so-called :term:`view <pyramid:view>`
+  as a function. We are giving it the name "start" in line #5 and the function
+  we define below will accept a :term:`request <pyramid:request>` object.
 
-- Also in line ``#4``, we instruct :mod:`our http module <score.http>` to
-  render a template called ``home.jinja2`` at the end of this function with the
-  parameters returned by the function. The result of the rendering process—
-  i.e. the rendered template, a string containing HTML in this case—is returned
-  as the response body to the client.
+- Also in line ``#4``, we instruct :ref:`pyramid's rendering system
+  <pyramid:renderers_chapter>` to render a template called ``start.jinja2``
+  at the end of this function with the parameters returned by the function. The
+  result of the rendering process — i.e. the rendered template, a string
+  containing HTML in this case — is return as the response body to the client.
 
-- Lines ``#6`` through ``#9``: We are using the :term:`database session
-  <sqlalchemy:session>` that was automatically added to the request by our
-  :mod:`db <score.db>` module to retrieve a list of the newest published
-  Articles.
+- Lines ``#6`` through ``#9``: We are using the database
+  :term:`session <sqlalchemy:session>` that was automatically added to the
+  request by our :mod:`db <score.db>` module to retrieve a list of the newest
+  published Articles.
 
 - Line ``#10``: The dictionary returned by this function contains the
   parameters to the template we defined earlier, in line ``#5``.
@@ -429,7 +476,7 @@ We can now add some test data through the command line interface:
 
 .. code-block:: console
 
-    (moswblog) sirlancelot@spamalot:~/moswblog$ score db reset -d development.conf
+    (moswblog)sirlancelot@spamalot:~/moswblog$ score db reset -d development.ini
 
 Let's see how our page looks with the data: http://localhost:6543 ... Alright!
 Time to move to the next steps.
@@ -839,7 +886,7 @@ our database to create the table for this class:
 
 .. code-block:: console
 
-    (moswblog) sirlancelot@spamalot:~/moswblog$ score db update development.conf
+    (moswblog)sirlancelot@spamalot:~/moswblog$ score db update development.ini
 
 Let's continue to the template for articles, ``moswblog/tpl/article.jinja2``
 and add these lines at the end of the content block:
@@ -1044,4 +1091,5 @@ Footnotes
 .. [2] This custom type will always create the correct database type. The
        documentation of the :ref:`database internals <db_internals>` explains
        the rationale behind this type.
+
 

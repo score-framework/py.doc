@@ -96,8 +96,8 @@ Configuration Helpers
 
 Passing configuration values as strings is not always the most convenient (or
 the most readable) method. There are scenarios where python code is the best
-way of configuring modules. The http router is a good example, which uses
-decorators to define routes:
+way of configuring modules. The :term:`http router <request router>` is a good
+example, which uses decorators to define routes:
 
 .. code-block:: python
 

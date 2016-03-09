@@ -1,14 +1,15 @@
 Index
 =====
 
+
 .. toctree::
     :maxdepth: 2
 
     introduction/index
     installation
-    tutorial
-    python-libs
-    js-libs
+    advanced/index
+    python/index
+    js/index
 
 * :ref:`glossary`
 * :ref:`genindex`
