@@ -32,18 +32,18 @@ module provides a function called ``init``:
         max_coconut_weight = int(confdict.get('max_weight', 10))
         assert swalllow.max_payload_weight >= max_coconut_weight
         timeout = parse_time_interval(confdict.get('assume_dead', '1d'))
-        return InitializedCoconutModule(max_coconut_weight, timeout)
+        return ConfiguredCoconutModule(max_coconut_weight, timeout)
 
 - Finally, your ``init`` function must return an instance of
-  :class:`score.init.InitializedModule` containing a configured instance of
+  :class:`score.init.ConfiguredModule` containing a configured instance of
   your module. This object will be used to represent your module throughout
   the rest of the application:
 
   .. code-block:: python
 
-    from score.init import InitializedModule
+    from score.init import ConfiguredModule
 
-    class InitializedCoconutModule(InitializedModule):
+    class ConfiguredCoconutModule(ConfiguredModule):
 
         def __init__(self, max_coconut_weight, timeout):
             import coconut

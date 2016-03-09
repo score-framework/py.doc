@@ -136,7 +136,7 @@ during the initialization and updates the return values of other initialized
 modules. The :mod:`score.css` module, for example, will register some routes at
 the :mod:`score.http` module, in order to serve css assets.
 
-Since some of the InitializedModules were modified after the initial call to
+Since some of the ConfiguredModules were modified after the initial call to
 the module's ``init``, the finalization step will give them a chance to process
 these changes before starting the actual application logic.
 
@@ -155,9 +155,9 @@ finalized, before finalizing itself:
 
     def init(confdict, swallow, knights=None):
         # TODO: do some real initialization here
-        return InitializedCoconutModule(swallow, knights)
+        return ConfiguredCoconutModule(swallow, knights)
 
-    class InitializedCoconutModule(ConfiguredModule):
+    class ConfiguredCoconutModule(ConfiguredModule):
 
         def __init__(self, swallow, knights):
             import coconut
