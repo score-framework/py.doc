@@ -4,8 +4,8 @@
 Installation
 ************
 
-Installation Summary
-====================
+Quickstart
+==========
 
 - :ref:`Make sure you have python 3 installed <installation_python3>`
 
@@ -37,12 +37,12 @@ Installation Summary
       conf      Manages configurations.
       projects  Create or load your projects
 
-- Head over to the :ref:`tutorial`, if you want to learn how to use score.
+- Head over to the :ref:`guided tour <introduction>`, if you want to learn how
+  to use score.
 
 
-
-Detailed description
-====================
+Step-By-Step
+============
 
 .. _installation_python3:
 
@@ -173,3 +173,10 @@ lovely `vex` python package has assembled a great explanation on this topic:
 https://github.com/sashahart/vex#first-time-setup-for-python-beginners
 
 .. _folder where score was installed: https://docs.python.org/3/install/index.html#alternate-installation-the-user-scheme
+
+
+Tutorial
+========
+
+Congratulations! You should head over to the :ref:`guided tour <introduction>`
+to learn how to put your newly installed framework to good use.
