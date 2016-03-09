@@ -7,7 +7,8 @@ Initialization
 As mentioned in the introduction, every SCORE application starts with an
 initialization step. This page will describe a few of the details of the
 initialization process, so make sure you have read and understood the basics
-described in the :ref:`introduction` before proceeding.
+described in the introduction to :ref:`introduction_initialization` before
+proceeding.
 
 
 The Entry Point
@@ -130,7 +131,7 @@ with the other.
 Finalization
 ============
 
-Every module creates its own :class:`score.init.InitializedModule` class
+Every module creates its own :class:`score.init.ConfiguredModule` class
 during the initialization and updates the return values of other initialized
 modules. The :mod:`score.css` module, for example, will register some routes at
 the :mod:`score.http` module, in order to serve css assets.
@@ -139,7 +140,7 @@ Since some of the InitializedModules were modified after the initial call to
 the module's ``init``, the finalization step will give them a chance to process
 these changes before starting the actual application logic.
 
-For this finalization step, all InitializedModule objects may implement a
+For this finalization step, all ConfiguredModule objects may implement a
 method called ``_finalize``, accepting any number module names. This
 module-list-as-function-arguments declares this modules dependencies for this
 step only.
@@ -150,13 +151,13 @@ finalized, before finalizing itself:
 
 .. code-block:: python
 
-    from score.init import InitializedModule
+    from score.init import ConfiguredModule
 
     def init(confdict, swallow, knights=None):
         # TODO: do some real initialization here
         return InitializedCoconutModule(swallow, knights)
 
-    class InitializedCoconutModule(InitializedModule):
+    class InitializedCoconutModule(ConfiguredModule):
 
         def __init__(self, swallow, knights):
             import coconut
