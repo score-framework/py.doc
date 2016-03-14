@@ -21,7 +21,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext upload
 
-upload:
+upload: clean html
 	@scp -r _build/html/* can@f3.strg.at:/usr/home/score-framework/doc/
 
 help:
@@ -53,6 +53,7 @@ clean:
 	rm -rf $(BUILDDIR)/*
 
 html:
+	@for i in `find js -type l`; do tail -n +11 "$$i/README.rst" | awk -f preparejs.awk > "$$i/index.rst"; done
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@for i in $(BUILDDIR)/html/python/*; do test -L "$$i/index.html" || ln -s index_include.html "$$i/index.html"; done
 	@echo
