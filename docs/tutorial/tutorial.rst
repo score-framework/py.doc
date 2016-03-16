@@ -4,6 +4,11 @@
 Blog Tutorial
 *************
 
+- Putting stuff on screen ("hello world")
+- Putting stuff into db
+- Articles list
+- Login
+
 Introduction
 ============
 

@@ -1,16 +1,10 @@
 .. _score:
-.. _introduction:
-.. _introduction_what_is_score:
+.. _tutorial:
+.. _tutorial_intro:
 
-****************************
-What is The SCORE Framework?
-****************************
-
-.. note::
-    This is the guided introduction that will provide you with everything you
-    need to start your own application. It will take two to three minutes to
-    read through the next two pages and the second page will take you to the
-    tutorial, which should be completed in about ten minutes.
+************
+Introduction
+************
 
 The SCORE Framework is founded on the following, smaller parts:
 
@@ -25,4 +19,4 @@ The SCORE Framework is founded on the following, smaller parts:
   SCORE applications with minimal effort.
 
 That's why, in order to understand SCORE, you will need to understand its
-:ref:`initialization process <introduction_initialization>`.
+:ref:`initialization process <tutorial_initialization>`.

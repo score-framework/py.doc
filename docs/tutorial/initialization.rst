@@ -1,12 +1,17 @@
-.. _introduction_initialization:
+.. _tutorial_initialization:
 
-******************************
-The SCORE Application workflow
-******************************
+**************
+Initialization
+**************
 
 A SCORE application always starts out by initializing all its modules. This
 step weeds out configuration issues early and allows getting heavy-weight
 operations out of the way before the actual application workflow starts.
+
+.. figure:: init.png
+    :alt: The SCORE Initialization process in a nutshell
+
+    The SCORE Initialization process in a nutshell
 
 Since your SCORE application is also a SCORE module, it is expected to
 initialize just like all other modules. The only requirement for this that your
