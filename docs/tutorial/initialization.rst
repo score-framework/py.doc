@@ -61,4 +61,4 @@ module provides a function called ``init``:
             return 42
 
 That's all there is to know! Now let's create an example application using this
-information. To the :ref:`blog tutorial <tutorial>`!
+information. To :ref:`the project definition <tutorial_project>`!

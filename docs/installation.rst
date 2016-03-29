@@ -37,7 +37,7 @@ Quickstart
       conf      Manages configurations.
       projects  Create or load your projects
 
-- Head over to the :ref:`guided tour <introduction>`, if you want to learn how
+- Head over to the :ref:`tutorial <tutorial>`, if you want to learn how
   to use score.
 
 
@@ -176,7 +176,7 @@ https://github.com/sashahart/vex#first-time-setup-for-python-beginners
 
 
 Tutorial
-========
+--------
 
-Congratulations! You should head over to the :ref:`guided tour <introduction>`
+Congratulations! You should head over to the :ref:`tutorial <tutorial>`
 to learn how to put your newly installed framework to good use.
