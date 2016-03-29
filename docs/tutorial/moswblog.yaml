@@ -1,0 +1,157 @@
+moswblog.db.user.InternalBlogger:
+
+    JohnCleese:
+        username: johncleese
+        name: John Cleese
+        password: bugger
+
+    MrsTwolumps:
+        username: mrtwolumps
+        name: Mrs. Twolumps
+        password: spambaconeggsandspam
+
+
+moswblog.db.user.ExternalBlogger:
+
+    BoondoggleGames:
+        username: boondogglegames
+        name: BoondoggleGames
+        password: whoami
+
+
+moswblog.db.content.Blog:
+
+    News:
+        name: News
+        owner: JohnCleese
+
+    Merchandise:
+        name: Merchandise
+        owner: MrsTwolumps
+
+
+moswblog.db.content.Article:
+
+    0:
+        author: JohnCleese
+        published: true
+        datetime: 2014-01-01 18:00:12
+        title: History of The Ministry
+        url: history-of-the-ministry
+        blog: News
+        teaser: >
+            Have you ever wondered, how The Ministry of Silly Walks was
+            established? Find out here.
+        body: |
+            Finally, there is a place to read up on the complete history of
+            The Ministry of Silly Walks! Although some of the information
+            seems to be a bit out of date, we are constantly working to
+            provide the most accurate information about our institution:
+
+            http://uncyclopedia.wikia.com/wiki/Ministry_of_Silly_Walks
+
+    1:
+        author: JohnCleese
+        published: true
+        datetime: 2014-01-01 18:00:12
+        blog: News
+        title: Signpost to The Ministry removed!
+        url: signpost-to-the-ministry-removed
+        teaser: >
+            A sign post, which was meant to show the way to the delegation of
+            The Ministry of Silly Walks was mistakenly removed by Norwegian
+            government.
+        body: |
+            After several months of Norwegian-British collaboration, we had
+            finally come to the joint resolution to place signposts to the
+            nearest delegation of The Ministry in various Norwegian cities.
+            The small city of Ørje was to be first of the many to contain such
+            an aid for confused citizens.
+
+            Unfortunately, the results of this joint effort were not
+            communicated throughout Norwegian government agencies, which led
+            to the removal of said sign post several days later. We are
+            concerned, that `this incident`_ might lead to the very end of an
+            otherwise very successfull cooperation with the Norwegian
+            government.
+
+            We sincerely hope that our `cooperation with Canada`_ is not
+            affected by the consequences of this mishap.
+
+            .. _cooperation with Canada: http://ottawacitizen.com/news/local-news/sparks-street-and-the-silliest-idea-to-ever-come-out-of-ottawa
+            .. _this incident: http://www.dailymail.co.uk/travel/article-2598344/The-real-Ministry-Silly-Walks-Pranksters-recreate-iconic-Monty-Python-sketch-improvised-street-sign-Norwegian-town.html
+
+    2:
+
+        author: BoondoggleGames
+        published: true
+        datetime: 2014-01-01 18:00:12
+        blog: Merchandise
+        title: The Ministry of Silly Walks - The App!
+        url: the-ministry-of-silly-walks-the-app
+        teaser: >
+            We are proud to announce the very first App about the one thing
+            that keeps people moving forward since several millenia.
+        body: |
+            Our App is available for Android devices, as well as iPhone:
+
+            http://www.thesillywalk.com/
+
+    3:
+        author: MrsTwolumps
+        published: true
+        datetime: 2014-01-01 18:00:12
+        blog: Merchandise
+        title: New Merchandise
+        url: new-merchandise
+        teaser: Our marketing department came up with some new gadgets!
+        body: |
+            You can now be the proud owner of a `pocket watch`_ with the
+            timeless beauty of our products. If you belong to a newer
+            generation, you might be rather excited to know, that there is
+            also a `wrist watch`_ with the same features!
+
+            If you are not a clock-person, you might want to make up for the
+            lack of objects on your walls py purchasing a poster_.
+
+            .. _pocket watch: http://www.amazon.com/Ministry-Silly-Pocket-DollTV-Python/dp/B00I0570Z0
+            .. _wrist watch: http://www.amazon.com/Monty-Python-Ministry-Silly-Walks/dp/B00DEN9ZHY
+            .. _poster: http://www.amazon.de/1art1-39577-Monty-Python-Ministry/dp/B000UY0N80
+
+
+moswblog.db.content.ArticleTag:
+
+    0:
+        article: 0
+        name: history
+    1:
+        article: 0
+        name: ministry
+    2:
+        article: 0
+        name: spam
+    3:
+        article: 1
+        name: scandal
+    4:
+        article: 1
+        name: spam
+    5:
+        article: 2
+        name: app
+    6:
+        article: 2
+        name: Uphone
+    7:
+        article: 2
+        name: Undroid
+    8:
+        article: 3
+        name: watch
+    9:
+        article: 3
+        name: poster
+    10:
+        article: 3
+        name: spam
+    
