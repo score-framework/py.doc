@@ -55,7 +55,7 @@ clean:
 html:
 	@for i in `find js -type l`; do tail -n +11 "$$i/README.rst" | awk -f preparejs.awk > "$$i/index.rst"; done
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	@for i in $(BUILDDIR)/html/python/*; do test -L "$$i/index.html" || ln -s index_include.html "$$i/index.html"; done
+	@for i in $(BUILDDIR)/html/python/*; do test -L "$$i/index.html" || (test -d "$$i" && ln -s index_include.html "$$i/index.html"); done
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
