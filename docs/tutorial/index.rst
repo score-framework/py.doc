@@ -15,4 +15,5 @@ basics.
     intro
     initialization
     project
+    setup
     db
