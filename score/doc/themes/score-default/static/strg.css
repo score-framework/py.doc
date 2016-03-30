@@ -212,7 +212,8 @@ span.faint {
     /* /HEADER */
     /* SIDEBAR */
         div.sphinxsidebarwrapper {
-            padding-left: 55px !important;
+            padding-left: 30px !important;
+            padding-top: 30px !important;
             width: 295px;
         }
 
@@ -222,7 +223,7 @@ span.faint {
         }
 
         div.sphinxsidebar ul li {
-            margin: 8px 0;
+            margin: 15px 0;
         }
 
         div.sphinxsidebar h3, div.sphinxsidebar h4 {
@@ -242,9 +243,86 @@ span.faint {
             color: #222222 !important;
         }
 
-        div.sphinxsidebar ul ul, div.sphinxsidebar ul.want-points {
-            list-style-type: disc;
+        div.sphinxsidebar ul ul,
+        div.sphinxsidebar ul.want-points {
+            list-style-type: none;
             color: #999999;
+            margin: 13px 0;
+        }
+
+        div.sphinxsidebar li:before {
+            content: '';
+            display: inline-block;
+            width: 25px;
+            height: 20px;
+            background: url('list.png');
+            position: absolute;
+            margin-top: -5px;
+        }
+
+        div.sphinxsidebar .has-children:before {
+            background: url('open-b.png')
+        }
+
+        div.sphinxsidebar .has-children.current:before,
+        div.sphinxsidebar .has-children.open:before {
+            background: url('close-b.png')
+        }
+
+        div.sphinxsidebar .toctree-l1:before {
+            margin-left: -5px;
+        }
+
+        div.sphinxsidebar .toctree-l2:before {
+            margin-left: 15px;
+        }
+
+        div.sphinxsidebar .toctree-l3:before {
+            margin-left: 35px;
+        }
+
+        div.sphinxsidebar .toctree-l4:before {
+            margin-left: 55px;
+        }
+
+        div.sphinxsidebar .toctree-l5:before {
+            margin-left: 75px;
+        }
+
+        div.sphinxsidebar .toctree-l6:before {
+            margin-left: 95px;
+        }
+
+        div.sphinxsidebar .toctree-l7:before {
+            margin-left: 115px;
+        }
+
+        div.sphinxsidebar .toctree-l1 > a {
+            margin-left: 20px;
+        }
+
+        div.sphinxsidebar .toctree-l2 > a {
+            margin-left: 40px;
+        }
+
+        div.sphinxsidebar .toctree-l3 > a {
+            margin-left: 60px;
+        }
+
+        div.sphinxsidebar .toctree-l4 > a {
+            margin-left: 80px;
+        }
+
+        div.sphinxsidebar .toctree-l5 > a {
+            margin-left: 100px;
+        }
+
+        div.sphinxsidebar .toctree-l6 > a {
+            margin-left: 120px;
+        }
+
+        div.sphinxsidebar .toctree-l7 > a {
+            margin-left: 140px;
         }
 
         div.sphinxsidebar ul .reference.internal {
@@ -345,56 +423,18 @@ span.faint {
     }
 
     .toctree-l1.current .toctree-l2,
-    .toctree-l1.open .toctree-l2 {
-        display: list-item;
-    }
-
     .toctree-l2.current .toctree-l3,
-    .toctree-l2.open .toctree-l3 {
-        display: list-item;
-    }
-
     .toctree-l3.current .toctree-l4,
-    .toctree-l3.open .toctree-l4 {
-        display: list-item;
-    }
-
     .toctree-l4.current .toctree-l5,
-    .toctree-l4.open .toctree-l5 {
-        display: list-item;
-    }
-
     .toctree-l5.current .toctree-l6,
-    .toctree-l5.open .toctree-l6 {
-        display: list-item;
-    }
-
     .toctree-l6.current .toctree-l7,
+    .toctree-l1.open .toctree-l2,
+    .toctree-l2.open .toctree-l3,
+    .toctree-l3.open .toctree-l4,
+    .toctree-l4.open .toctree-l5,
+    .toctree-l5.open .toctree-l6,
     .toctree-l6.open .toctree-l7 {
         display: list-item;
-    }
-
-    div.sphinxsidebar ul li {
-        list-style-image: url('list.png');
-        position: relative;
-    }
-
-    div.sphinxsidebar ul li.has-children {
-        list-style-type: none !important;
-        list-style-image: url('open-b.png');
-    }
-
-    div.sphinxsidebar ul li.has-children.open {
-        list-style-type: none !important;
-        list-style-image: url('close-b.png');
-    }
-
-    div.sphinxsidebar ul li.has-children.open li.has-children {
-        list-style-image: url('open-b.png');
-    }
-
-    div.sphinxsidebar ul li.has-children.open li.has-children.open {
-        list-style-image: url('close-b.png');
     }
 
     div.sphinxsidebar ul li.has-children.current-dynamic.open a.current.reference.internal,
