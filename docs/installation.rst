@@ -21,8 +21,14 @@ Quickstart
       ...
     Successfully installed click networkx score.cli score.init score.projects vex
 
+- :ref:`Add the score executable to your $PATH <installation_postinstall>`:
+
+  .. code-block:: console
+
+    sirlancelot@spamalot:~$ python3 -c 'import score.cli; score.cli.setup()'
+
 - :ref:`Close the old shell and open a new one to ensure you can call score
-  <installation_call_score>`:
+  <installation_postinstall>`:
 
   .. code-block:: console
 
@@ -66,6 +72,7 @@ python3`_.
 
 .. _download and install python3: https://www.python.org/downloads/
 
+
 .. _installation_open_shell:
 
 Opening a new command shell
@@ -107,6 +114,7 @@ of its `command line prompt`_::
 
     .. _terminal: http://en.wikipedia.org/wiki/Terminal_%28OS_X%29
 
+
 .. _installation_projects:
 
 Installing ``score.projects``
@@ -126,7 +134,8 @@ different projects:
 
 .. _pip: https://pypi.python.org/pypi/pip
 
-.. _installation_call_score:
+
+.. _installation_postinstall:
 
 Calling score
 -------------
@@ -136,22 +145,33 @@ Calling score
     way of thoroughly testing an installation on *Windows*. You will have to
     add the `path to the score executable`_ to your `PATH` manually.
 
+    On the other hand, if you have a working solution, we would very much
+    appreciate a `pull request`_.
+
     .. _path to the score executable: https://docs.python.org/3/install/index.html#alternate-installation-the-user-scheme
     .. _PATH: http://www.computerhope.com/issues/ch000549.htm
+    .. _pull request: https://github.com/score-framework/py.cli/blob/524388b707ff5a09e1044b0a3330eae2b84037bf/score/cli/setup.py#L56
 
-One of the packages, that was installed in the previous step, is
+
+One of the packages that was installed in the previous step is
 :mod:`score.cli`. This module allows you to control your applications from the
 command line.
 
-During the installation of that package, we already tried to configure your
-system to provide a new shell command to you: ``score``. We tried to update
-your ~/.bashrc to add the folder, where the score executable was installed, to
-your ``$PATH``.
+After the installation of that package, we will need to teach your system where
+to find the command line application `score`. This is done by updating your
+`$PATH`__ declaration. :mod:`score.cli` ships with an installation script, that
+will attempt just that. It will update your ``.bashrc`` or ``.zshrc`` to
+contain the correct delaration:
 
-But since there is no guaranteed way of achieving this, you will have to check
-if it worked. Just open a new shell (this is important, as the changes do not
-take effect in your old shell) and see if you can access score. If everything
-worked, it should look like the following:
+.. code-block:: console
+
+    sirlancelot@spamalot:~$ python3 -c 'import score.cli; score.cli.setup()'
+
+__ https://en.wikipedia.org/wiki/PATH_%28variable%29
+
+Afterwards, you should check if it worked. Just open a new shell (this is
+important, as the changes do not take effect in your old shell) and see if you
+can access score. If everything worked, it should look like the following:
 
   .. code-block:: console
 
@@ -166,9 +186,10 @@ worked, it should look like the following:
       conf      Manages configurations.
       projects  Create or load your projects
 
-If you get a "command not found" error instead, you will have to update your
-``$PATH`` to include the `folder where score was installed`_. The author of the
-lovely `vex` python package has assembled a great explanation on this topic:
+If you get a "command not found" error instead, it means that the automatic
+configuration failed and you will have to update your ``$PATH`` manually. It
+must include the `folder where score was installed`_. The author of the lovely
+`vex` python package has assembled a great explanation on this topic:
 
 https://github.com/sashahart/vex#first-time-setup-for-python-beginners
 
