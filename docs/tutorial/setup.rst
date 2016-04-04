@@ -14,5 +14,8 @@ package should be called *blog*, though:
         ...
       (moswblog)sirlancelot@spamalot:~$ 
 
-That's it, we have created a new and completely empty python package. It is
-time to define our :ref:`database layer <tutorial_db>`.
+That's it, we have created a new and completely empty python package. It even
+contains an empty SCORE configuration file (*local.conf*), that we will expand
+during the course of this tutorial.
+
+It is time to define our :ref:`database layer <tutorial_db>`.

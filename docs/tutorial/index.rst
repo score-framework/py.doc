@@ -16,4 +16,4 @@ basics.
     initialization
     project
     setup
-    db
+    db/index
