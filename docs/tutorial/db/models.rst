@@ -41,6 +41,7 @@ The next file is the one containing the blogs and articles and is called
         author_id = Column(IdType, ForeignKey('_blogger.id'), nullable=False)
         author = relationship('Blogger')
         title = Column(String(200), nullable=False)
+        teaser = Column(String, nullable=False)
         body = Column(String, nullable=False)
 
 

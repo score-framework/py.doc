@@ -1,4 +1,4 @@
-moswblog.db.user.InternalBlogger:
+moswblog.db.user.Blogger:
 
     JohnCleese:
         username: johncleese
@@ -10,35 +10,17 @@ moswblog.db.user.InternalBlogger:
         name: Mrs. Twolumps
         password: spambaconeggsandspam
 
-
-moswblog.db.user.ExternalBlogger:
-
     BoondoggleGames:
         username: boondogglegames
         name: BoondoggleGames
         password: whoami
 
 
-moswblog.db.content.Blog:
-
-    News:
-        name: News
-        owner: JohnCleese
-
-    Merchandise:
-        name: Merchandise
-        owner: MrsTwolumps
-
-
 moswblog.db.content.Article:
 
     0:
         author: JohnCleese
-        published: true
-        datetime: 2014-01-01 18:00:12
         title: History of The Ministry
-        url: history-of-the-ministry
-        blog: News
         teaser: >
             Have you ever wondered, how The Ministry of Silly Walks was
             established? Find out here.
@@ -52,11 +34,7 @@ moswblog.db.content.Article:
 
     1:
         author: JohnCleese
-        published: true
-        datetime: 2014-01-01 18:00:12
-        blog: News
         title: Signpost to The Ministry removed!
-        url: signpost-to-the-ministry-removed
         teaser: >
             A sign post, which was meant to show the way to the delegation of
             The Ministry of Silly Walks was mistakenly removed by Norwegian
@@ -84,11 +62,7 @@ moswblog.db.content.Article:
     2:
 
         author: BoondoggleGames
-        published: true
-        datetime: 2014-01-01 18:00:12
-        blog: Merchandise
         title: The Ministry of Silly Walks - The App!
-        url: the-ministry-of-silly-walks-the-app
         teaser: >
             We are proud to announce the very first App about the one thing
             that keeps people moving forward since several millenia.
@@ -99,11 +73,7 @@ moswblog.db.content.Article:
 
     3:
         author: MrsTwolumps
-        published: true
-        datetime: 2014-01-01 18:00:12
-        blog: Merchandise
         title: New Merchandise
-        url: new-merchandise
         teaser: Our marketing department came up with some new gadgets!
         body: |
             You can now be the proud owner of a `pocket watch`_ with the
@@ -117,41 +87,3 @@ moswblog.db.content.Article:
             .. _pocket watch: http://www.amazon.com/Ministry-Silly-Pocket-DollTV-Python/dp/B00I0570Z0
             .. _wrist watch: http://www.amazon.com/Monty-Python-Ministry-Silly-Walks/dp/B00DEN9ZHY
             .. _poster: http://www.amazon.de/1art1-39577-Monty-Python-Ministry/dp/B000UY0N80
-
-
-moswblog.db.content.ArticleTag:
-
-    0:
-        article: 0
-        name: history
-    1:
-        article: 0
-        name: ministry
-    2:
-        article: 0
-        name: spam
-    3:
-        article: 1
-        name: scandal
-    4:
-        article: 1
-        name: spam
-    5:
-        article: 2
-        name: app
-    6:
-        article: 2
-        name: Uphone
-    7:
-        article: 2
-        name: Undroid
-    8:
-        article: 3
-        name: watch
-    9:
-        article: 3
-        name: poster
-    10:
-        article: 3
-        name: spam
-    
