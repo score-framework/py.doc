@@ -143,7 +143,7 @@ Calling score
 .. note::
     Since we are mostly operating on UNIX-based systems, we currently have no
     way of thoroughly testing an installation on *Windows*. You will have to
-    add the `path to the score executable`_ to your `PATH` manually.
+    add the `path to the score executable`_ to your `PATH`_ manually.
 
     On the other hand, if you have a working solution, we would very much
     appreciate a `pull request`_.

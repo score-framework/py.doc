@@ -7,8 +7,8 @@ Initialization
 As mentioned in the introduction, every SCORE application starts with an
 initialization step. This page will describe a few of the details of the
 initialization process, so make sure you have read and understood the basics
-described in the introduction to :ref:`introduction_initialization` before
-proceeding.
+described in the :ref:`introduction to the initialization
+<tutorial_initialization>` before proceeding.
 
 
 The Entry Point
