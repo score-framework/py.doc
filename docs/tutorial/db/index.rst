@@ -3,10 +3,10 @@
 Database
 ========
 
-The database requires a so-called :term:`base class` to work with. Fortunately,
-creating one is as easy as calling a single function. Let's create the
-necessary folders and files for our database package. The first folder is
-``blog/db``, which will contain our database models:
+The database requires a so-called :ref:`base class <db_base_class>` to work
+with. Fortunately, creating one is as easy as calling a single function. Let's
+create the necessary folders and files for our database package. The first
+folder is ``blog/db``, which will contain our database models:
 
 .. code-block:: console
 
