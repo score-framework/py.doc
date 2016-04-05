@@ -37,6 +37,7 @@ section `install_requires`:
         'score.db',
         'sqlalchemy_utils',
         'passlib',
+        'PyYAML',
     ],
 
 Installing the dependencies is done with the following command:

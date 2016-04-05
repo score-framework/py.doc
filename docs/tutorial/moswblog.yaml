@@ -1,4 +1,4 @@
-moswblog.db.user.Blogger:
+blog.db.user.Blogger:
 
     JohnCleese:
         username: johncleese
@@ -16,7 +16,7 @@ moswblog.db.user.Blogger:
         password: whoami
 
 
-moswblog.db.content.Article:
+blog.db.article.Article:
 
     0:
         author: JohnCleese

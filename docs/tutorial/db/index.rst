@@ -10,7 +10,7 @@ necessary folders and files for our database package. The first folder is
 
 .. code-block:: console
 
-    (moswblog)sirlancelot@spamalot:~/moswblog$ mkdir db
+    (moswblog)sirlancelot@spamalot:~/moswblog$ mkdir blog/db
 
 We will need to make this folder a python package by adding the file
 ``blog/db/__init__.py``. Usually it is completely sufficient to have an empty
@@ -26,9 +26,7 @@ going to add an additional line to import everything from all sub-modules:
 This will allow us to access all models from all files in this folder under the
 package *blog.db*. If this sounds confusing, don't worry: it will make a bit
 more sense once we have some classes. So let's move on to creating our base
-class.
-
-Put the following into ``blog/db/storable.py``:
+class in ``blog/db/storable.py``:
 
 .. code-block:: python
 
@@ -42,6 +40,7 @@ We can now use this base class to create and inspect our database step by step:
     :maxdepth: 2
 
     models
-    conf
+    configuration
     reset
+    gendummy
 
