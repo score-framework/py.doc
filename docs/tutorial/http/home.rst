@@ -20,6 +20,10 @@ i.e. this route is responsible for your home page. Try visiting
 http://localhost:8080 again and you should see your first route's enthusiastic
 greeting.
 
+The *ctx* parameter to thr route function is a :term:`context object`. It
+creates a scope for various other modules, like :mod:`score.db`, which will
+know when to commit a transaction.
+
 But since nobody is called "World", we should change the route to be able to
 provide a proper name:
 

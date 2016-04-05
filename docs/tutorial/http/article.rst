@@ -54,19 +54,5 @@ Alright, let's make the output of this route a bit prettier:
 You can now finally read the whole body of the first article at the URL
 http://localhost:8080/article/1.
 
-Let's go back tou our home route to also add an links to these routes. Open up
-``blog/http/home.py`` again:
-
-.. code-block:: python
-
-    from .router import router
-    import blog.db as db
-
-
-    @router.route('home', '/')
-    def home(ctx):
-        html = ''
-        for article in ctx.db.query(db.Article):
-            html += '<a href="%s">%s</a><br>' % (
-                ctx.url('article', article), article.title)
-        return html
+We should now :ref:`revisit the home page <tutorial_http_linking>` and
+add links to the routes.

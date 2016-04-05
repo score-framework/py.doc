@@ -33,3 +33,4 @@ As with the database and the CLI, we will add this new feature step by step:
     serve
     home
     article
+    linking
