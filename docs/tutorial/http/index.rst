@@ -1,4 +1,4 @@
-.. _tutorial_web:
+.. _tutorial_http:
 
 HTTP Server
 ===========

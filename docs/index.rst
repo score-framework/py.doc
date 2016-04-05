@@ -10,6 +10,7 @@ Index
     initialization
     python/index
     js/index
+    glossary
 
 * :ref:`glossary`
 * :ref:`genindex`

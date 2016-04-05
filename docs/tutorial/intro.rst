@@ -1,5 +1,3 @@
-.. _score:
-.. _tutorial:
 .. _tutorial_intro:
 
 ************
