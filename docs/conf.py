@@ -282,13 +282,10 @@ texinfo_documents = [
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
     'python': ('http://docs.python.org/3/', None),
-    'pyramid': ('http://docs.pylonsproject.org/projects/pyramid/en/latest/', None),
     'sqlalchemy': ('http://docs.sqlalchemy.org/en/rel_0_9/', None),
-    'virtualenvwrapper': ('http://virtualenvwrapper.readthedocs.org/en/latest/', None),
     'pip': ('http://pip.readthedocs.org/en/latest', None),
     'setuptools': ('http://pythonhosted.org//setuptools/', None),
     'jinja': ('http://jinja.pocoo.org/docs/dev/', None),
-    'sqlalchemyutils': ('http://sqlalchemy-utils.readthedocs.org/en/latest/', None),
     'elasticsearch': ('http://elasticsearch-py.readthedocs.org/en/master/', None),
     'requests': ('http://requests.readthedocs.org/en/latest/', None),
     'varnish': ('http://varnish.readthedocs.org/en/latest/', None),
