@@ -6,6 +6,18 @@ span.faint {
     color: #AAA;
 }
 
+blockquote:before {
+    content: '"';
+}
+
+blockquote:after {
+    content: ' "';
+}
+
+blockquote div {
+    display: inline;
+}
+
 /* FONTS */
     @font-face {
         font-family: roboto;
