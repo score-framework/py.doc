@@ -1,7 +1,7 @@
 .. _tutorial_project:
 
-The Project
-===========
+Specification
+=============
 
 Our customer, The Ministry of Silly Walks, wants to maintain a blog where
 various members, and in some cases external authors, like The Spanish

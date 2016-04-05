@@ -1,4 +1,5 @@
 .. _tutorial_initialization:
+.. _module_initialization:
 
 **************
 Initialization

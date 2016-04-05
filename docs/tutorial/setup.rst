@@ -1,7 +1,7 @@
 .. _tutorial_setup:
 
-Setup
-=====
+Preparation
+===========
 
 We'll start by creating the project using the projects module. We do this on
 the command line, just like during the :ref:`installation`. Let's call our
