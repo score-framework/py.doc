@@ -21,7 +21,7 @@ blog.db.article.Article:
     0:
         author: JohnCleese
         title: History of The Ministry
-        teaser: >
+        teaser: |
             Have you ever wondered, how The Ministry of Silly Walks was
             established? Find out here.
         body: |
@@ -35,7 +35,7 @@ blog.db.article.Article:
     1:
         author: JohnCleese
         title: Signpost to The Ministry removed!
-        teaser: >
+        teaser: |
             A sign post, which was meant to show the way to the delegation of
             The Ministry of Silly Walks was mistakenly removed by Norwegian
             government.
@@ -63,7 +63,7 @@ blog.db.article.Article:
 
         author: BoondoggleGames
         title: The Ministry of Silly Walks - The App!
-        teaser: >
+        teaser: |
             We are proud to announce the very first App about the one thing
             that keeps people moving forward since several millenia.
         body: |

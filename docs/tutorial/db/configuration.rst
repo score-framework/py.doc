@@ -10,6 +10,7 @@ using sqlite_, which is a database engine that operates on a single file.
 Let's update our SCORE configuration file ``local.conf``:
 
 .. code-block:: ini
+    :emphasize-lines: 3,4,6-9
 
     [score.init]
     modules = 
@@ -30,6 +31,7 @@ Edit the file *setup.py* and add the following list of dependencies to the
 section `install_requires`:
 
 .. code-block:: python
+    :emphasize-lines: 3-7
 
     install_requires=[
         'score.init',

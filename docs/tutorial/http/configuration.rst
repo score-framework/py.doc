@@ -37,7 +37,7 @@ Time to edit the configuration file ``local.conf``:
 We need these modules installed, too, so let's edit our ``setup.py``:
 
 .. code-block:: python
-    :emphasize-lines: 7,8
+    :emphasize-lines: 7,8,12
 
     install_requires=[
         'score.init',
@@ -50,6 +50,7 @@ We need these modules installed, too, so let's edit our ``setup.py``:
         'sqlalchemy_utils',
         'passlib',
         'PyYAML',
+        'docutils',
     ],
 
 Again, we will have to re-install our package after changing its *setup.py*:
@@ -70,8 +71,8 @@ module is initialized. We will define this helper in the file
     router = RouterConfiguration()
 
 
-Now, htat we have a router, we can start defining our :ref:`first route
-<tutorial_http_home>`.
+Since everything is in place now, we can start the :ref:`http server
+<tutorial_http_serve>`.
 
 
 .. _sqlite: https://sqlite.org/about.html

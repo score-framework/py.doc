@@ -30,4 +30,6 @@ As with the database and the CLI, we will add this new feature step by step:
     :maxdepth: 2
 
     configuration
+    serve
     home
+    article

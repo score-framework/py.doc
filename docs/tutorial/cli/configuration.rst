@@ -21,7 +21,7 @@ new modules:
     sqlalchemy.url = sqlite:///${here}/database.sqlite3
     destroyable = true
 
-These modules need to be installed, too, so let's add them to our *setup.py*:
+These modules need to be installed, too, so let's add them to our ``setup.py``:
 
 .. code-block:: python
     :emphasize-lines: 5,6
@@ -39,10 +39,11 @@ These modules need to be installed, too, so let's add them to our *setup.py*:
 
 We will need to add something else to the same file: the `entry point`_
 definition. The next line might look a bit complicated, if you are new to this
-concept, but it basically just says "If some code asks for functions belonging
-to the *score.cli* group, give her the function *main*, too. You can find that
-function in the package *blog.cli.db*. Oh, and tell her this rule is called
-*db*".
+concept, but it basically just says:
+
+    If some code asks for objects belonging to the *score.cli* group, make
+    sure to include the function *main*, too. You can find it in the package
+    *blog.cli.db*. Oh, and tell her this rule is called *db*.
 
 .. code-block:: python
 
