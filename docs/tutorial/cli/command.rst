@@ -46,7 +46,7 @@ be called *db*. That's why you can access the *main* function as ``score db``:
 
 .. code-block:: console
 
-    (moswblog)soulmerge@ca:~/tmp/moswblog$ score db
+    (moswblog)sirlancelot@spamalot:~$ score db
     Usage: score db [OPTIONS] COMMAND [ARGS]...
 
       Provides database management commands.
@@ -62,7 +62,7 @@ function, just append it to the command line:
 
 .. code-block:: console
 
-    (moswblog)soulmerge@ca:~/tmp/moswblog$ score db reset
+    (moswblog)sirlancelot@spamalot:~$ score db reset
 
 Congratulations! You have just written and executed a shell command! We can
 leave the shell for now and implement another way of accessing our database: a

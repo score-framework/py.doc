@@ -29,7 +29,7 @@ We can now inspect the objects in our database again:
 
 .. code-block:: console
 
-    (moswblog)soulmerge@ca:~/tmp/moswblog$ sqlite3 database.sqlite3
+    (moswblog)sirlancelot@spamalot:~/moswblog$ sqlite3 database.sqlite3
     SQLite version 3.11.1 2016-03-03 16:17:53
     Enter ".help" for usage hints.
 
