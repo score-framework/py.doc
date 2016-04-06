@@ -20,6 +20,7 @@ Python Libraries
     jsapi/index_include
     kvcache/index_include
     netfs/index_include
+    projects/index_include
     svg/index_include
     tpl/index_include
     varnish/index_include
