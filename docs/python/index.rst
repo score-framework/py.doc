@@ -21,6 +21,7 @@ Python Libraries
     kvcache/index_include
     netfs/index_include
     projects/index_include
+    session/index_include
     svg/index_include
     tpl/index_include
     varnish/index_include
