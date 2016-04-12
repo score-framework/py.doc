@@ -7,14 +7,13 @@ We will update our SCORE configuration file ``local.conf`` to integrate some
 new modules:
 
 .. code-block:: ini
-    :emphasize-lines: 5,6
+    :emphasize-lines: 5
 
     [score.init]
     modules = 
         score.shell
         score.db
         score.ctx
-        score.cli
 
     [db]
     base = blog.db.Storable

@@ -55,7 +55,7 @@ be called *db*. That's why you can access the *main* function as ``score db``:
       --help  Show this message and exit.
 
     Commands:
-      reset  Drops and re-creates the database
+      reset  Drops and re-creates the database.
 
 This is the aforementioned command group. If you want to call the other *reset*
 function, just append it to the command line:
