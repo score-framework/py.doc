@@ -130,4 +130,22 @@
             </div>
         </div>
     </div>
+    <script>
+        (function() {
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i];
+                if (link.getAttribute('target')) {
+                    continue;
+                }
+                var href = link.getAttribute('href');
+                if (!href) {
+                    continue;
+                }
+                if (/^http:\/\/localhost[:\/]/.test(href)) {
+                    link.setAttribute('target', 'local');
+                }
+            }
+        })();
+    </script>
 {% endblock %}

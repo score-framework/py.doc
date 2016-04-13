@@ -23,7 +23,7 @@ such a nested configuration is through the function
 .. code-block:: python
 
     from score.init import init, parse_config_file
-    score = init(parse_config_file(file))
+    score = init(parse_config_file('/path/to/file.conf'))
 
 There is another function, which does the above calls in a single step:
 :func:`score.init.init_from_file`
@@ -31,7 +31,7 @@ There is another function, which does the above calls in a single step:
 .. code-block:: python
 
     from score.init import init_from_file
-    score = init_from_file(file)
+    score = init_from_file('/path/to/file.conf')
 
 
 The Module List

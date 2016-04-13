@@ -4,14 +4,14 @@ Article Route
 -------------
 
 We will now create a route to display our articles. Here is the basic route,
-that we will expand shortly:
+that we will expand shortly, in the file ``http/article.py``:
 
 .. code-block:: python
 
     from .router import router
     import blog.db as db
 
-    @router.route('article', '/{article.id}')
+    @router.route('article', '/article/{article.id}')
     def article(ctx, article: db.Article):
         return article.title
 

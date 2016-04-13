@@ -16,7 +16,7 @@ access to our application for this purpose:
     (InteractiveConsole)
     >>>
 
-You have just initialized a python interpreter, where your SCORE application is
+You have just initialized a python interpreter where your SCORE application is
 already initialized. The only thing left to do is initializing your
 database:
 
