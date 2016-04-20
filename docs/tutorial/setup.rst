@@ -40,4 +40,17 @@ during the course of this tutorial.
           sirlancelot@spamalot:~$ score projects load moswblog
           (moswblog)sirlancelot@spamalot:~$ 
 
+    You might want to create a shell alias for this, as it a bit long to type:
+
+    .. code-block:: console
+
+          sirlancelot@spamalot:~$ echo 'alias load="score projects load"' >> ~/.bashrc
+
+    You can then access your projects with a single command (only works in a
+    *new* shell after defining the alias):
+
+    .. code-block:: console
+
+          sirlancelot@spamalot:~$ load moswblog
+
 It is time to define our :ref:`database layer <tutorial_db>`.
