@@ -5,7 +5,7 @@ Shell Command
 
 We had declared in our package setup, that the function is called *main* and
 resides in the module *blog.cli.db*. This means we will add the following to
-the file ``blog/cli/db,py``:
+the file ``blog/cli/db.py``:
 
 .. code-block:: python
 

@@ -12,14 +12,13 @@ different method in production (and most probably will).
 Time to edit the configuration file ``local.conf``:
 
 .. code-block:: ini
-    :emphasize-lines: 7,14-15,17-19
+    :emphasize-lines: 6,13-14,16-18
 
     [score.init]
     modules = 
         score.shell
         score.db
         score.ctx
-        score.cli
         score.http
 
     [db]

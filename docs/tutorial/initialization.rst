@@ -15,8 +15,8 @@ operations out of the way before the actual application workflow starts.
     The SCORE Initialization process in a nutshell
 
 Since your SCORE application is also a SCORE module, it is expected to
-initialize just like all other modules. The only requirement for this that your
-module provides a function called ``init``:
+initialize just like all other modules. The only requirement for this is that
+your module provides a function called ``init``:
 
 - This function must accept a dictionary as its first argument, containing
   your module's configuration (this is the so-called :term:`confdict`). The
@@ -36,7 +36,7 @@ module provides a function called ``init``:
 
     def init(confdict, swallow, knights=None):
         max_coconut_weight = int(confdict.get('max_weight', 10))
-        assert swalllow.max_payload_weight >= max_coconut_weight
+        assert swallow.max_payload_weight >= max_coconut_weight
         timeout = parse_time_interval(confdict.get('assume_dead', '1d'))
         return ConfiguredCoconutModule(max_coconut_weight, timeout)
 
