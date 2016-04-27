@@ -146,8 +146,10 @@ module-list-as-function-arguments declares this modules dependencies for this
 step only.
 
 In the following example, the *coconut* module requires a *swallow* module
-during the call to its ``init``, but will wait until the *knights* module is
-finalized, before finalizing itself: 
+during the call to its ``init``, but will wait until the *knights* and *africa*
+modules are finalized, before finalizing itself. Note that the finalization
+process also states, that the *africa* module is not strictly required, but if
+it was configured, it will be finalized before this one:
 
 .. code-block:: python
 
@@ -165,5 +167,40 @@ finalized, before finalizing itself:
             self.swallow = swallow
             self.knights = knights
 
-        def _finalize(self, knights):
-            knights.notify_topic(self)
+        def _finalize(self, knights, africa=None):
+            assert self.knights == knights
+            knights.notify_topic(self, africa)
+
+If a module has a dynamic list of dependencies for its ``_finalize`` function,
+it can provide them in one of two ways as a separate member called
+``_finalize_dependencies``. It should either be
+
+- a list of required dependencies (i.e. module aliases), or
+- a `dict` mapping module aliases to booleans, indicating if the dependency is
+  *mandatory* or not.
+
+The above example could be rewritten to make use of this alternate approach:
+
+.. code-block:: python
+
+    from score.init import ConfiguredModule
+
+    def init(confdict, swallow, knights=None):
+        # TODO: do some real initialization here
+        return ConfiguredCoconutModule(swallow, knights)
+
+    class ConfiguredCoconutModule(ConfiguredModule):
+
+        def __init__(self, swallow, knights):
+            import coconut
+            super().__init__(coconut)
+            self.swallow = swallow
+            self.knights = knights
+            self._finalize_dependencies = {
+                'knights': True,
+                'africa': False,
+            }
+
+        def _finalize(self, **kwargs):
+            assert self.knights == kwargs['knights']
+            self.knights.notify_topic(self, kwargs.get('africa'))
