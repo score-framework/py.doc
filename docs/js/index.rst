@@ -9,5 +9,4 @@ Javascript Libraries
     menu/index
     oop/index
     router/index
-    tpl/index
 

@@ -18,6 +18,19 @@ blockquote div {
     display: inline;
 }
 
+.confdefault {
+    color: #AAA;
+    font-size: 90%;
+}
+
+.confdefault:before {
+    content: '[default: ';
+}
+
+.confdefault:after {
+    content: ']';
+}
+
 /* FONTS */
     @font-face {
         font-family: roboto;
