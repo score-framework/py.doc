@@ -5,8 +5,9 @@ Javascript Libraries
 .. toctree::
     :maxdepth: 2
 
-    hash/index
-    menu/index
+    init/index
+    dom/index
+    ajax/index
     oop/index
     router/index
 
