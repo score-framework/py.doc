@@ -21,7 +21,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext upload
 
-upload: clean html
+upload: html
 	@scp -r _build/html/* can@f3.strg.at:/usr/home/score-framework/doc/
 
 help:
