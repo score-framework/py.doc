@@ -25,7 +25,7 @@ Quickstart
 
   .. code-block:: console
 
-    sirlancelot@spamalot:~$ python3 -c 'import score.cli; score.cli.setup()'
+    sirlancelot@spamalot:~$ python3 -m score.cli.setup
 
 - :ref:`Close the old shell and open a new one to ensure you can call score
   <installation_postinstall>`:
@@ -165,7 +165,7 @@ contain the correct delaration:
 
 .. code-block:: console
 
-    sirlancelot@spamalot:~$ python3 -c 'import score.cli; score.cli.setup()'
+    sirlancelot@spamalot:~$ python3 -m score.cli.setup
 
 __ https://en.wikipedia.org/wiki/PATH_%28variable%29
 
