@@ -284,7 +284,7 @@ intersphinx_mapping = {
     'python': ('http://docs.python.org/3/', None),
     'sqlalchemy': ('http://docs.sqlalchemy.org/en/latest/', None),
     'pip': ('http://pip.readthedocs.org/en/latest', None),
-    'setuptools': ('https://setuptools.readthedocs.io/en/latest/objects.inv', None),
+    'setuptools': ('https://setuptools.readthedocs.io/en/latest/', None),
     'jinja': ('http://jinja.pocoo.org/docs/dev/', None),
     'elasticsearch': ('http://elasticsearch-py.readthedocs.org/en/master/', None),
     'requests': ('http://requests.readthedocs.org/en/latest/', None),
