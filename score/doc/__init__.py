@@ -1,4 +1,4 @@
-# Copyright © 2015 STRG.AT GmbH, Vienna, Austria
+# Copyright © 2015,2016 STRG.AT GmbH, Vienna, Austria
 #
 # This file is part of the The SCORE Framework.
 #
@@ -28,6 +28,9 @@ from os import path
 
 package_dir = path.abspath(path.dirname(__file__))
 template_path = path.join(package_dir, 'themes')
+
+__version__ = '0.1.2'
+
 
 def get_path():
     return template_path
