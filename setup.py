@@ -64,6 +64,7 @@ setup(
     install_requires=[
         'Sphinx >= 1.2',
         'sphinxcontrib-zopeext',
+        'docutils',
     ],
     entry_points={
         'sphinx_themes': [
