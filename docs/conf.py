@@ -82,11 +82,13 @@ release = '0.1'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build',
-        'js/*/README.rst',
-        'python/*/glossary.rst',
-        'python/*/glossary_include.rst',
-        'python/*/index.rst']
+exclude_patterns = [
+    '_build',
+    '_subrepos',
+    'js/*/README.rst',
+    'python/*/glossary.rst',
+    'python/*/glossary_include.rst',
+    'python/*/index.rst']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.

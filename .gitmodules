@@ -1,0 +1,84 @@
+[submodule "docs/_subrepos/py.auth"]
+	path = docs/_subrepos/py.auth
+	url = ../py.auth
+[submodule "docs/_subrepos/py.cli"]
+	path = docs/_subrepos/py.cli
+	url = ../py.cli
+[submodule "docs/_subrepos/py.css"]
+	path = docs/_subrepos/py.css
+	url = ../py.css
+[submodule "docs/_subrepos/py.ctx"]
+	path = docs/_subrepos/py.ctx
+	url = ../py.ctx
+[submodule "docs/_subrepos/py.db"]
+	path = docs/_subrepos/py.db
+	url = ../py.db
+[submodule "docs/_subrepos/py.distlock"]
+	path = docs/_subrepos/py.distlock
+	url = ../py.distlock
+[submodule "docs/_subrepos/py.es"]
+	path = docs/_subrepos/py.es
+	url = ../py.es
+[submodule "docs/_subrepos/py.geoip"]
+	path = docs/_subrepos/py.geoip
+	url = ../py.geoip
+[submodule "docs/_subrepos/py.html"]
+	path = docs/_subrepos/py.html
+	url = ../py.html
+[submodule "docs/_subrepos/py.http"]
+	path = docs/_subrepos/py.http
+	url = ../py.http
+[submodule "docs/_subrepos/py.init"]
+	path = docs/_subrepos/py.init
+	url = ../py.init
+[submodule "docs/_subrepos/py.js"]
+	path = docs/_subrepos/py.js
+	url = ../py.js
+[submodule "docs/_subrepos/py.jsapi"]
+	path = docs/_subrepos/py.jsapi
+	url = ../py.jsapi
+[submodule "docs/_subrepos/py.kvcache"]
+	path = docs/_subrepos/py.kvcache
+	url = ../py.kvcache
+[submodule "docs/_subrepos/py.netfs"]
+	path = docs/_subrepos/py.netfs
+	url = ../py.netfs
+[submodule "docs/_subrepos/py.perf"]
+	path = docs/_subrepos/py.perf
+	url = ../py.perf
+[submodule "docs/_subrepos/py.projects"]
+	path = docs/_subrepos/py.projects
+	url = ../py.projects
+[submodule "docs/_subrepos/py.session"]
+	path = docs/_subrepos/py.session
+	url = ../py.session
+[submodule "docs/_subrepos/py.shell"]
+	path = docs/_subrepos/py.shell
+	url = ../py.shell
+[submodule "docs/_subrepos/py.svg"]
+	path = docs/_subrepos/py.svg
+	url = ../py.svg
+[submodule "docs/_subrepos/py.tpl"]
+	path = docs/_subrepos/py.tpl
+	url = ../py.tpl
+[submodule "docs/_subrepos/py.varnish"]
+	path = docs/_subrepos/py.varnish
+	url = ../py.varnish
+[submodule "docs/_subrepos/py.webassets"]
+	path = docs/_subrepos/py.webassets
+	url = ../py.webassets
+[submodule "docs/_subrepos/js.ajax"]
+	path = docs/_subrepos/js.ajax
+	url = ../js.ajax
+[submodule "docs/_subrepos/js.dom"]
+	path = docs/_subrepos/js.dom
+	url = ../js.dom
+[submodule "docs/_subrepos/js.init"]
+	path = docs/_subrepos/js.init
+	url = ../js.init
+[submodule "docs/_subrepos/js.oop"]
+	path = docs/_subrepos/js.oop
+	url = ../js.oop
+[submodule "docs/_subrepos/js.router"]
+	path = docs/_subrepos/js.router
+	url = ../js.router
