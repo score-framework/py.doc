@@ -13,7 +13,7 @@ Quickstart
 
 - :ref:`Install score's projects management tool into your home folder
   <installation_projects>`:
- 
+
   .. code-block:: console
 
     sirlancelot@spamalot:~$ pip3 install --user score.projects
@@ -34,11 +34,11 @@ Quickstart
 
     sirlancelot@spamalot:~$ score
     Usage: score [OPTIONS] COMMAND [ARGS]...
-    
+
     Options:
       -c, --conf PATH  The configuration to use.
       --help           Show this message and exit.
-    
+
     Commands:
       conf      Manages configurations.
       projects  Create or load your projects
@@ -125,12 +125,12 @@ installing packages in your user folder, if you pass it the ``--user`` flag. We
 will use it to install the score module, that we will be using to manage
 different projects:
 
-  .. code-block:: console
+.. code-block:: console
 
-    sirlancelot@spamalot:~$ pip3 install --user score.projects
-    Collecting score.projects
-      ...
-    Successfully installed click networkx score.cli score.init score.projects vex
+  sirlancelot@spamalot:~$ pip3 install --user score.projects
+  Collecting score.projects
+    ...
+  Successfully installed click networkx score.cli score.init score.projects vex
 
 .. _pip: https://pypi.python.org/pypi/pip
 
@@ -165,7 +165,7 @@ contain the correct delaration:
 
 .. code-block:: console
 
-    sirlancelot@spamalot:~$ python3 -m score.cli.setup
+  sirlancelot@spamalot:~$ python3 -m score.cli.setup
 
 __ https://en.wikipedia.org/wiki/PATH_%28variable%29
 
@@ -173,18 +173,18 @@ Afterwards, you should check if it worked. Just open a new shell (this is
 important, as the changes do not take effect in your old shell) and see if you
 can access score. If everything worked, it should look like the following:
 
-  .. code-block:: console
+.. code-block:: console
 
-    sirlancelot@spamalot:~$ score
-    Usage: score [OPTIONS] COMMAND [ARGS]...
-    
-    Options:
-      -c, --conf PATH  The configuration to use.
-      --help           Show this message and exit.
-    
-    Commands:
-      conf      Manages configurations.
-      projects  Create or load your projects
+  sirlancelot@spamalot:~$ score
+  Usage: score [OPTIONS] COMMAND [ARGS]...
+
+  Options:
+    -c, --conf PATH  The configuration to use.
+    --help           Show this message and exit.
+
+  Commands:
+    conf      Manages configurations.
+    projects  Create or load your projects
 
 If you get a "command not found" error instead, it means that the automatic
 configuration failed and you will have to update your ``$PATH`` manually. It
