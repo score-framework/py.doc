@@ -29,7 +29,7 @@ from os import path
 package_dir = path.abspath(path.dirname(__file__))
 template_path = path.join(package_dir, 'themes')
 
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 
 
 def get_path():
