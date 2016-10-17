@@ -1,9 +1,9 @@
 .. _score:
 .. _tutorial:
 
-************
-Get Started!
-************
+********
+Tutorial
+********
 
 This is the tutorial that will provide you with everything you need
 to start your own application. It should take approximately ten to fifteen
