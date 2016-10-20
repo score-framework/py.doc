@@ -82,3 +82,6 @@
 [submodule "docs/_subrepos/js.router"]
 	path = docs/_subrepos/js.router
 	url = ../js.router
+[submodule "docs/_subrepos/py.serve"]
+	path = docs/_subrepos/py.serve
+	url = ../py.serve
