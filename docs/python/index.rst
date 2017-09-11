@@ -25,7 +25,6 @@ Python Libraries
     session/index_include
     serve/index_include
     shell/index_include
-    svg/index_include
     tpl/index_include
     varnish/index_include
     webassets/index_include

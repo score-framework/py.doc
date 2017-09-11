@@ -41,11 +41,6 @@ score.projects
 
 .. include:: python/projects/glossary_include.rst
 
-score.svg
-=========
-
-.. include:: python/svg/glossary_include.rst
-
 score.tpl
 =========
 
