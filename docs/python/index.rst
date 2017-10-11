@@ -22,6 +22,7 @@ Python Libraries
     netfs/index_include
     perf/index_include
     projects/index_include
+    pyfilesystem/index_include
     session/index_include
     serve/index_include
     shell/index_include

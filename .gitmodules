@@ -85,3 +85,6 @@
 [submodule "docs/_subrepos/py.serve"]
 	path = docs/_subrepos/py.serve
 	url = ../py.serve
+[submodule "docs/_subrepos/py.pyfilesystem"]
+	path = docs/_subrepos/py.pyfilesystem
+	url = ../py.pyfilesystem

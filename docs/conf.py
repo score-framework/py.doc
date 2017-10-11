@@ -293,4 +293,5 @@ intersphinx_mapping = {
     'varnish': ('http://varnish.readthedocs.org/en/latest/', None),
     'zope': ('http://zodb.readthedocs.org/en/latest/', None),
     'click': ('http://click.pocoo.org/latest/', None),
+    'pyfilesystem': ('https://pyfilesystem2.readthedocs.io/en/latest/', None),
 }
