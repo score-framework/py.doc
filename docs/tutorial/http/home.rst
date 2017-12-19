@@ -5,11 +5,9 @@ Home Page
 
 The router configuration object we created earlier provides a convenient
 decorator for defining new routes. Let's make use of that and add our first
-route to ``blog/http/home.py``:
+route to the end of ``moswblog/http.py``:
 
 .. code-block:: python
-
-    from .router import router
 
     @router.route('home', '/')
     def home(ctx):
@@ -20,16 +18,14 @@ i.e. this route is responsible for your home page. Try visiting
 http://localhost:8080 again and you should see your first route's enthusiastic
 greeting.
 
-The *ctx* parameter to thr route function is a :term:`context object`. It
-creates a scope for various other modules, like :mod:`score.db`, which will
+The *ctx* parameter to the route function is a :term:`context object`. It
+creates a scope for various other modules, like :mod:`score.sa.db`, which will
 know when to commit a transaction.
 
 But since nobody is called "World", we should change the route to be able to
-provide a proper name:
+accept a proper name:
 
 .. code-block:: python
-
-    from .router import router
 
     @router.route('home', '/{name}')
     def home(ctx, name):
@@ -44,20 +40,23 @@ comes to addressing aristocracy properly.
 As you can see, the URL template now happily accepts *every* URL and returns a
 greeting for the given string. This is achieved through a variable in the URL
 template, and we will soon make use of this to access our articles. But let's
-first change the route to list the articles in our database instead:
+first change the route to list the articles in our database instead. The
+content of the file ``moswblog/http.py`` should now be the following:
 
 .. code-block:: python
 
-    from .router import router
-    import blog.db as db
+    import moswblog.db as db
+    from score.http import RouterConfiguration
+
+
+    router = RouterConfiguration()
+
 
     @router.route('home', '/')
     def home(ctx):
-        html = ''
-        for article in ctx.db.query(db.Article):
-            html += article.title
-            html += '<br>'
-        return html
+        titles = list(article.title
+                      for article in ctx.orm.query(db.Article))
+        return '<br>'.join(titles)
 
 Alright, this is a bit more interesting, but we still can't see the contents of
 the aricles. The next step would be to create the :ref:`article route

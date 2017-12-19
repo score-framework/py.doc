@@ -9,19 +9,19 @@ Python Libraries
     cli/index_include
     css/index_include
     ctx/index_include
-    db/index_include
     distlock/index_include
     es/index_include
     geoip/index_include
-    html/index_include
     http/index_include
     init/index_include
     js/index_include
     jsapi/index_include
     kvcache/index_include
     netfs/index_include
+    sa.db/index_include
+    sa.orm/index_include
+    sass/index_include
     perf/index_include
-    projects/index_include
     pyfilesystem/index_include
     session/index_include
     serve/index_include

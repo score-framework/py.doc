@@ -1,7 +1,7 @@
-blog.db.user.Blogger:
+moswblog.db.Blogger:
 
-    JohnCleese:
-        username: johncleese
+    MrTeabag:
+        username: mrteabag
         name: John Cleese
         password: bugger
 
@@ -16,10 +16,10 @@ blog.db.user.Blogger:
         password: whoami
 
 
-blog.db.article.Article:
+moswblog.db.Article:
 
     0:
-        author: JohnCleese
+        author: MrTeabag
         title: History of The Ministry
         teaser: |
             Have you ever wondered, how The Ministry of Silly Walks was
@@ -33,7 +33,7 @@ blog.db.article.Article:
             http://uncyclopedia.wikia.com/wiki/Ministry_of_Silly_Walks
 
     1:
-        author: JohnCleese
+        author: MrTeabag
         title: Signpost to The Ministry removed!
         teaser: |
             A sign post, which was meant to show the way to the delegation of

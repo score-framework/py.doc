@@ -3,67 +3,43 @@
 CLI Configuration
 -----------------
 
-We will update our SCORE configuration file ``local.conf`` to integrate some
-new modules:
-
-.. code-block:: ini
-    :emphasize-lines: 5
-
-    [score.init]
-    modules = 
-        score.shell
-        score.db
-        score.ctx
-
-    [db]
-    base = blog.db.Storable
-    sqlalchemy.url = sqlite:///${here}/database.sqlite3
-    destroyable = true
-
-These modules need to be installed, too, so let's add them to our ``setup.py``:
-
-.. code-block:: python
-    :emphasize-lines: 5,6
-
-    install_requires=[
-        'score.init',
-        'score.shell',
-        'score.db',
-        'score.ctx',
-        'score.cli',
-        'sqlalchemy_utils',
-        'passlib',
-        'PyYAML',
-    ],
-
-We will need to add something else to the same file: the `entry point`_
-definition. The next line might look a bit complicated, if you are new to this
-concept, but it basically just says:
-
-    If some code asks for objects belonging to the *score.cli* group, make
-    sure to include the function *main*, too. You can find it in the package
-    *blog.cli.db*. Oh, and tell her this rule is called *db*.
-
-.. code-block:: python
-
-    install_requires=[
-        ...
-    ],
-    entry_points={
-        'score.cli': [
-            'db = blog.cli.db:main',
-        ],
-    },
-
-Since we have changed some definitions in our package, we will have to
-re-install it:
+The module :mod:`score.cli` provides the executable *score* which can
+initialize SCORE and to perform operations with the configured application.
+Install it using pip:
 
 .. code-block:: console
 
-    (moswblog)sirlancelot@spamalot:~/moswblog$ python setup.py develop
+    $ pip install score.cli
 
-It is now time to write the function we referenced earlier. This will be our
-:ref:`first shell command <tutorial_cli_command>`.
+And now you will need to register your development configuration with this
+command:
 
-.. _sqlite: https://sqlite.org/about.html
-.. _entry point: http://pythonhosted.org/setuptools/pkg_resources.html#entry-points
+.. code-block:: console
+
+    $ score conf add dev.conf
+    $ score conf list   
+    dev *
+
+The second command lists all configurations you have registered so far and will
+mark the default configuration with an asterisk. Since you only have one
+configuration, it is automatically your default configuration.
+
+Your :mod:`score.cli` installation is now configured. Let's install another
+handy module for development: :mod:`score.shell`.
+
+.. code-block:: console
+
+    $ pip install score.shell
+    $ score shell
+
+>>> score.moswblog.government_grant
+0
+
+The package :mod:`score.cli` just manages your configuration files and provides
+the executable called *score*. The other module—:mod:`score.shell`— registered
+a new :term:`shell command`, that you can access easily through the command
+line. In this case, the shell command provides a python shell with your readily
+configured SCORE application.
+
+Let's now :ref:`create the moswblog CLI <tutorial_cli_command>` with our own
+entry point.

@@ -10,9 +10,6 @@
 [submodule "docs/_subrepos/py.ctx"]
 	path = docs/_subrepos/py.ctx
 	url = ../py.ctx
-[submodule "docs/_subrepos/py.db"]
-	path = docs/_subrepos/py.db
-	url = ../py.db
 [submodule "docs/_subrepos/py.distlock"]
 	path = docs/_subrepos/py.distlock
 	url = ../py.distlock
@@ -88,3 +85,12 @@
 [submodule "docs/_subrepos/py.pyfilesystem"]
 	path = docs/_subrepos/py.pyfilesystem
 	url = ../py.pyfilesystem
+[submodule "docs/_subrepos/py.sa.db"]
+	path = docs/_subrepos/py.sa.db
+	url = ../py.sa.db
+[submodule "docs/_subrepos/py.sa.orm"]
+	path = docs/_subrepos/py.sa.orm
+	url = ../py.sa.orm
+[submodule "docs/_subrepos/py.sass"]
+	path = docs/_subrepos/py.sass
+	url = ../py.sass

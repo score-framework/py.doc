@@ -5,8 +5,8 @@ Command Line Interface
 
 When working with multiple people with different operating systems, editors and
 workflows, it might become hard to make all your tools work on every
-developer's machine. That's why we provide the :mod:`score.cli` module: The
-`command shell`_ is the lowest common denominator across all development
+developer's machine. This where the :mod:`score.cli` module enters the stage:
+The `command shell`_ is the lowest common denominator across all development
 setups.
 
 Whenever you encounter something you notice yourself doing more than a few
@@ -18,23 +18,11 @@ re-creating our database. This is quite a common operation during development,
 since it would be a miracle if we got our database models right from the
 beginning.
 
-Just like with the  database, we need a folder containing all our shell
-commands. Lets call it *blog.cli*: [1]_
-
-.. code-block:: console
-
-    (moswblog)sirlancelot@spamalot:~/moswblog$ mkdir blog/cli
-    (moswblog)sirlancelot@spamalot:~/moswblog$ touch blog/cli/__init__.py
-
-Now we are ready to integrate the module and write our shell command.
-
 .. toctree::
     :maxdepth: 2
 
     configuration
     command
-
-.. [1] cli is an acronym of Command Line Interface
 
 .. _command shell: https://en.wikipedia.org/wiki/Command-line_interface
 .. _three great virtues of a programmer: http://threevirtues.com/

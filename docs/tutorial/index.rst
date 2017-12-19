@@ -16,7 +16,7 @@ basics.
     intro
     initialization
     project
-    setup
+    setup/index
     db/index
     cli/index
     http/index

@@ -36,11 +36,6 @@ score.kvcache
 
 .. include:: python/kvcache/glossary_include.rst
 
-score.projects
-==============
-
-.. include:: python/projects/glossary_include.rst
-
 score.tpl
 =========
 

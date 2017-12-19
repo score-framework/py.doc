@@ -4,33 +4,19 @@ Database Reset
 --------------
 
 Now that we have defined all our classes, we need to create the database
-tables, views, foreign keys, triggers, etc. We will use a command-line
-access to our application for this purpose:
+tables, views, foreign keys, triggers, etc. We will initialize our application
+and tell the :mod:`score.sa.orm` module to initialize the database:
 
-.. code-block:: console
-
-    (moswblog)sirlancelot@spamalot:~/moswblog$ score shell
-    Python 3.4.3 (default, Jan  8 2016, 11:18:01) 
-    [GCC 5.3.0] on linux
-    Type "help", "copyright", "credits" or "license" for more information.
-    (InteractiveConsole)
-    >>>
-
-You have just initialized a python interpreter where your SCORE application is
-already initialized. The only thing left to do is initializing your
-database:
-
->>> score.db.create()
+>>> from score.init import init_from_file
+>>> score = init_from_file('dev.conf')
+>>> score.orm.create()
 
 This should silently generate all required database entities. We can now
 connect to the database and inspect it through the console:
 
 .. code-block:: console
 
-    (moswblog)sirlancelot@spamalot:~/moswblog$ sqlite3 database.sqlite3
-    SQLite version 3.11.1 2016-03-03 16:17:53
-    Enter ".help" for usage hints.
-    sqlite>
+    $ sqlite3 database.sqlite3
 
 Let's first look at the tables and views:
 
@@ -49,11 +35,11 @@ Let's first look at the tables and views:
 
 We have a table, as well as a view_ for each class we created earlier. These
 :ref:`automatically created views <db_view>` are a feature of the
-:mod:`score.db` module. They will make your life easier whenever you ever have
-to meddle with the database manually. They are also the reason why database tables
-start with an underscore: The more-readable name without the leading underscore
-is reserved for humans, where all members of all parent classes are aggregated
-into a convenient view.
+:mod:`score.sa.orm` module. They will make your life easier whenever you ever
+have to meddle with the database manually. They are also the reason why
+database tables start with an underscore: The more-readable name without the
+leading underscore is reserved for humans, where all members of all parent
+classes are aggregated into a convenient view.
 
 .. code-block:: sqlite3
 

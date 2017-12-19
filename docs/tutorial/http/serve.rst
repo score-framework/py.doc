@@ -3,12 +3,12 @@
 Starting Serve
 --------------
 
-Starting the server is as simple as calling its shell command:
+Starting the server is as simple as calling the shell command of
+:mod:`score.serve`:
 
 .. code-block:: console
 
-    (moswblog)sirlancelot@spamalot:~/moswblog$ score serve
-    2016-04-05 13:05:34,731 INFO  [score.serve][MainThread] ready to serve!
+    $ score serve
 
 That's it! You can now fire up your browser and visit http://localhost:8080 and
 enjoy the glorious welcome page: a 404 error.
@@ -27,13 +27,3 @@ Let's change that and create the :ref:`home page route <tutorial_http_home>`.
 
     You will need to leave this process running, to continue accessing your
     application via http.  
-
-.. note::
-
-    Just a reminder: If you want to open a new shell, you just need the
-    following to access your application's virtual environment:
-
-    .. code-block:: console
-
-        sirlancelot@spamalot:~$ score projects load moswblog
-        (moswblog)sirlancelot@spamalot:~$ 

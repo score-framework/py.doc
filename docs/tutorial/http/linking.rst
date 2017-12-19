@@ -4,18 +4,14 @@ Creating URLs
 -------------
 
 Let's go back to our home route to add links to the list of articles. Open up
-``blog/http/home.py``:
+``blog/http.py`` and modify the *home* function to look like the following:
 
 .. code-block:: python
-
-    from .router import router
-    import blog.db as db
-
 
     @router.route('home', '/')
     def home(ctx):
         html = ''
-        for article in ctx.db.query(db.Article):
+        for article in ctx.orm.query(db.Article):
             url = ctx.url('article', article)
             html += '<a href="%s">%s</a><br>' % (url, article.title)
         return html

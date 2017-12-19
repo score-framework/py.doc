@@ -3,13 +3,11 @@
 Article Route
 -------------
 
-We will now create a route to display our articles. Here is the basic route,
-that we will expand shortly, in the file ``http/article.py``:
+We will now create a route to display our articles. Here is the basic route
+that we will expand shortly. Add it to the end of the file
+``moswblog/http.py``:
 
 .. code-block:: python
-
-    from .router import router
-    import blog.db as db
 
     @router.route('article', '/article/{article.id}')
     def article(ctx, article: db.Article):
@@ -22,21 +20,19 @@ example, to read the title of the first article.
 There are several things of interest here. The most important observation is
 that the route function receives an ``Article`` object, and not an id! The
 underlying philosophy during route definition is: Always try to write your
-route functions just like regular functions! If you had a function for
-lower-casing an article's text, you wouldn't pass it an article id, either.
+route functions like regular functions! If you had a function for lower-casing
+an article's text, you wouldn't pass it an article id, either.
 
 But the the question is: why do we receive an ``Article`` object? The reason is
-simple: The http module accepts :mod:`score.db` as optional dependency during
-its initialization and thus detects route variables that can be retrieved from
-the database. This won't work in *every* case, but is good enough for most
-routes.
+simple: The http module accepts :mod:`score.sa.orm` as an optional dependency
+during its initialization and thus detects route variables that can be
+retrieved from the database. This won't work in *every* case, but is good
+enough for most routes.
 
 Alright, let's make the output of this route a bit prettier:
 
 .. code-block:: python
 
-    from .router import router
-    import blog.db as db
     from docutils.core import publish_parts
 
 
@@ -54,5 +50,5 @@ Alright, let's make the output of this route a bit prettier:
 You can now finally read the whole body of the first article at the URL
 http://localhost:8080/article/1.
 
-We should now :ref:`revisit the home page <tutorial_http_linking>` and
-add links to the routes.
+We should now revisit the home page and :ref:`add links to the routes
+<tutorial_http_linking>`.
