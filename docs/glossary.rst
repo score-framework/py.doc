@@ -11,6 +11,11 @@ score.auth
 
 .. include:: python/auth/glossary_include.rst
 
+score.cli
+=========
+
+.. include:: python/cli/glossary_include.rst
+
 score.ctx
 =========
 
