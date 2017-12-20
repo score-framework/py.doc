@@ -41,6 +41,11 @@ score.tpl
 
 .. include:: python/tpl/glossary_include.rst
 
+score.pyfilesystem
+==================
+
+.. include:: python/pyfilesystem/glossary_include.rst
+
 score.varnish
 =============
 
