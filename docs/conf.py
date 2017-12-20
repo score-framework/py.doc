@@ -59,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'strg.at'
-copyright = '2015,2016 strg.at'
+copyright = '2015-2017 strg.at'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
