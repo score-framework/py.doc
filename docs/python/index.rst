@@ -14,6 +14,7 @@ Python Libraries
     geoip/index_include
     http/index_include
     init/index_include
+    jinja2/index_include
     js/index_include
     jsapi/index_include
     kvcache/index_include

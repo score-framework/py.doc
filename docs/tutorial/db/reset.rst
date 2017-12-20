@@ -34,7 +34,7 @@ Let's first look at the tables and views:
     );
 
 We have a table, as well as a view_ for each class we created earlier. These
-:ref:`automatically created views <db_view>` are a feature of the
+:ref:`automatically created views <score_orm_view>` are a feature of the
 :mod:`score.sa.orm` module. They will make your life easier whenever you ever
 have to meddle with the database manually. They are also the reason why
 database tables start with an underscore: The more-readable name without the

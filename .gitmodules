@@ -94,3 +94,6 @@
 [submodule "docs/_subrepos/py.sass"]
 	path = docs/_subrepos/py.sass
 	url = ../py.sass
+[submodule "docs/_subrepos/py.jinja2"]
+	path = docs/_subrepos/py.jinja2
+	url = ../py.jinja2
