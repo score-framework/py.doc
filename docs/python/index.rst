@@ -20,11 +20,12 @@ Python Libraries
     jsapi/index_include
     kvcache/index_include
     netfs/index_include
+    perf/index_include
+    pyfilesystem/index_include
+    requirejs/index_include
     sa.db/index_include
     sa.orm/index_include
     sass/index_include
-    perf/index_include
-    pyfilesystem/index_include
     session/index_include
     serve/index_include
     shell/index_include

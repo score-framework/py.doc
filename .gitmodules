@@ -100,3 +100,6 @@
 [submodule "docs/_subrepos/py.asyncio"]
 	path = docs/_subrepos/py.asyncio
 	url = ../py.asyncio
+[submodule "docs/_subrepos/py.requirejs"]
+	path = docs/_subrepos/py.requirejs
+	url = ../py.requirejs
