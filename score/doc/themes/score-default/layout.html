@@ -32,11 +32,12 @@
                 }
             });
             $nav.find('li').on('click', function(event) {
-                if (event.target.nodeName != 'A') {
-                    $(this).toggleClass('open');
-                    event.preventDefault();
-                    return false;
+                if (event.target.nodeName != 'LI') {
+                    return true;
                 }
+                $(this).toggleClass('open');
+                event.preventDefault();
+                return false;
             });
         })();
     </script>
