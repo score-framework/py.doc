@@ -97,3 +97,6 @@
 [submodule "docs/_subrepos/py.jinja2"]
 	path = docs/_subrepos/py.jinja2
 	url = ../py.jinja2
+[submodule "docs/_subrepos/py.asyncio"]
+	path = docs/_subrepos/py.asyncio
+	url = ../py.asyncio

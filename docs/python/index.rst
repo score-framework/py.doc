@@ -6,6 +6,7 @@ Python Libraries
     :maxdepth: 1
 
     auth/index_include
+    asyncio/index_include
     cli/index_include
     css/index_include
     ctx/index_include
