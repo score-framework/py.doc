@@ -43,10 +43,10 @@ should initialize. It will extract the key ``conf['score.init']['modules']``
 and construct a list of modules.
 
 The next step is to create a dependency map to define the order, in which these
-modules need to be initialized. Every module is assigned an :term:`alias
-<module alias>` in this step, which is defined as part of the module name after
-the last period. If the module is called *transportation.aviation*, for
-example, its alias will be *aviation* by default.
+modules need to be initialized. Every module is assigned an alias in this step,
+which is defined as part of the module name after the last period. If the
+module is called *transportation.aviation*, for example, its alias will be
+*aviation* by default.
 
 The modules will then be initialized through a call to their init function. The
 :term:`confdict` passed as first parameter to this function is retrieved from
