@@ -103,3 +103,6 @@
 [submodule "docs/_subrepos/py.requirejs"]
 	path = docs/_subrepos/py.requirejs
 	url = ../py.requirejs
+[submodule "docs/_subrepos/py.uws"]
+	path = docs/_subrepos/py.uws
+	url = ../py.uws

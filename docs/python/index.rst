@@ -30,5 +30,6 @@ Python Libraries
     serve/index_include
     shell/index_include
     tpl/index_include
+    uws/index_include
     varnish/index_include
     webassets/index_include
