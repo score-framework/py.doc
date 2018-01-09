@@ -22,7 +22,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext upload
 
 upload: html
-	@scp -r _build/html/* can@f3.strg.at:/usr/home/score-framework/doc/
+	@scp -r _build/html/* strgweb@f3.strg.at:/home/strgweb/www/www.score-framework.org/public/doc/
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
