@@ -33,7 +33,7 @@ with open(os.path.join(here, 'README.rst')) as f:
 
 setup(
     name='score.doc',
-    version='0.1.7',
+    version='0.1.8',
     description='Helpers for documenting The SCORE Framework',
     long_description=README,
     author='strg.at',
