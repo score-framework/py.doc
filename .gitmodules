@@ -106,3 +106,6 @@
 [submodule "docs/_subrepos/py.uws"]
 	path = docs/_subrepos/py.uws
 	url = ../py.uws
+[submodule "docs/_subrepos/py.websockets"]
+	path = docs/_subrepos/py.websockets
+	url = ../py.websockets

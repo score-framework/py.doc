@@ -33,3 +33,4 @@ Python Libraries
     uws/index_include
     varnish/index_include
     webassets/index_include
+    websockets/index_include
