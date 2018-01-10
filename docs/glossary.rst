@@ -11,6 +11,11 @@ score.auth
 
 .. include:: python/auth/glossary_include.rst
 
+score.asyncio
+=============
+
+.. include:: python/asyncio/glossary_include.rst
+
 score.cli
 =========
 
