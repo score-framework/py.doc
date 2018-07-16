@@ -19,7 +19,7 @@ The error makes sense if you understand how routing works: The
 :mod:`score.http` module will ask each registered route if it can handle the
 current HTTP request. If none of them can, it emits a 404 to the client:
 resource not found. Since we have not defined any routes yet, every call will
-lead lead to the same result.
+lead to the same result.
 
 Let's change that and create the :ref:`home page route <tutorial_http_home>`.
 
