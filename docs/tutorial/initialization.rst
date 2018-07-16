@@ -42,7 +42,7 @@ characteristics:
 
     def init(confdict, swallow, knights=None):
         coconut_weight = int(confdict.get('weight', 10))
-        if swallow.max_payload_weight < coconut_weight
+        if swallow.max_payload_weight < coconut_weight:
             raise InitializationError(
                 'coconut', 'Swallow cannot transport coconut')
         timeout = parse_time_interval(confdict.get('assume_dead', '1d'))
