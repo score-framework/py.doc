@@ -59,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'strg.at'
-copyright = '2015-2018 strg.at'
+copyright = '2015-2018 strg.at, 2019-2024 Necdet Can Atesman'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -287,8 +287,8 @@ intersphinx_mapping = {
     'sqlalchemy': ('http://docs.sqlalchemy.org/en/latest/', None),
     'pip': ('http://pip.readthedocs.org/en/latest', None),
     'setuptools': ('https://setuptools.readthedocs.io/en/latest/', None),
-    'jinja': ('http://jinja.pocoo.org/docs/dev/', None),
-    'elasticsearch': ('http://elasticsearch-py.readthedocs.org/en/master/', None),
+    'jinja': ('https://jinja.palletsprojects.com/en/3.1.x/', None),
+    'elasticsearch': ('https://elasticsearch-py.readthedocs.io/en/6.8.2/', None),
     'requests': ('http://requests.readthedocs.org/en/latest/', None),
     'varnish': ('http://varnish.readthedocs.org/en/latest/', None),
     'zope': ('http://zodb.readthedocs.org/en/latest/', None),
