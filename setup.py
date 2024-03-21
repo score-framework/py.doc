@@ -62,7 +62,8 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'Sphinx >= 1.2',
+        'Sphinx >= 1.2, <2.0',
+        'alabaster < 0.7.14',  # for Sphinx 1.X compatibility
         'sphinxcontrib-zopeext',
         'docutils',
     ],
