@@ -104,6 +104,9 @@ blockquote div {
 
         div.body {
             overflow: hidden !important;
+            height: calc(100% - 30px);
+            min-width: auto;
+            max-width: none;
         }
 
         div.document {
@@ -143,8 +146,8 @@ blockquote div {
         }
 
         div.bodywrapper {
-            margin: 0 0 0 360px !important;
             border-left: 1px solid #ddd;
+            height: 100%;
         }
 
         table.highlighttable {
@@ -249,17 +252,12 @@ blockquote div {
 
         div.sphinxsidebar ul li {
             margin: 15px 0;
+            margin-left: 20px;
         }
 
         div.sphinxsidebar h3, div.sphinxsidebar h4 {
             font-family: roboto-bold !important;
-            margin: 16px 20px 0 0 !important;
-            padding-left: 0 !important;
             border-bottom: 1px solid #dddddd !important;
-        }
-
-        div.sphinxsidebar h3 {
-            margin-left: 20px !important;
         }
 
         div.sphinxsidebar h3 a {
@@ -283,6 +281,7 @@ blockquote div {
             background: url('list.png');
             position: absolute;
             margin-top: -5px;
+            margin-left: -20px;
         }
 
         div.sphinxsidebar .has-children:before {

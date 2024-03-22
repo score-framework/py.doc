@@ -58,7 +58,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'strg.at'
+project = 'score-framework'
 copyright = '2015-2018 strg.at, 2019-2024 Necdet Can Atesman'
 
 # The version info for the project you're documenting, acts as replacement for
